@@ -1,0 +1,19 @@
+# Open file formats and software
+
+Reproducibility in research relies on sharing both the steps used to analyze data and the data itself. Using open file formats and free, **open-source software** helps make these resources available to everyone. With software such as R and Python, researchers can document their data analysis procedures (in so-called scripts) that others can reuse or adapt.
+
+For those less familiar with programming, **point-and-click tools** like JASP, jamovi, and PSPP offer user-friendly alternatives. These free options remove financial barriers and make it easier for others to verify and build on your work. In contrast, proprietary software such as SPSS or MPlus restricts accessibility, limiting reproducibility to users who can afford expensive licenses.
+
+### Advantages {.unnumbered}
+
+-   Fundamentally enables reproducibility, as other researchers can open and run the analyses
+-   Open-source software lets researchers see how the software processes data when using its functions
+-   Promotes equity in access to research
+
+### Resources {.unnumbered}
+
+<a href="https://www.edx.org/learn/data-science/harvard-university-introduction-to-data-science-with-python" target="_blank" class="infobtn">![](www/python_icon.png){width="100"}<br /><b>Intro to python</b><br />(edX online course)</a> 
+<a href="https://www.edx.org/learn/r-programming/harvard-university-data-science-r-basics" target="_blank" class="infobtn">![](www/rstudio_icon.png){width="100"}<br /><b>Intro to R</b><br />(edX online course)</a>   
+  
+<a href="https://www.youtube.com/watch?v=APRaBFC2lEQ" target="_blank" class="infobtn">![](www/jasp_logo.png){width="100"}<br /><b>Intro to JASP</b><br />(youtube: JASP Statistics)</a> 
+<a href="https://www.youtube.com/watch?v=mZomeS0tLxY" target="_blank" class="infobtn">![](www/jamovi_logo.png){width="100"}<br /><b>Intro to jamovi</b><br />(youtube: freeCodeCamp.org)</a>

@@ -1,0 +1,24 @@
+# Preface {.unnumbered}
+
+Here you'll find information on computational reproducibility.
+
+## Quarto Book
+
+### Create new project > "Quarto book"
+- check "use renv with this project"
+- check "create a git repository"
+
+### Create pages
+
+
+### Put this into .gitignore
+/.quarto/
+/_site/
+
+
+### Publish
+First time, connect to github:
+
+
+Put this into the terminal:
+quarto publish gh-pages

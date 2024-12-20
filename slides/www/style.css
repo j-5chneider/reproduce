@@ -1,0 +1,18 @@
+.fig-story {
+  width: 50%;
+  margin-left: 10%;
+}
+
+#cr-artner > p {
+  margin-left: 10%;
+}
+
+#title-block-header {
+  min-height: 100vh;
+  
+}
+
+.quarto-title {
+  margin-top: 25%;
+  margin-bottom: 15%;
+}

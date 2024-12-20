@@ -1,0 +1,82 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "reproduce",
+    "section": "",
+    "text": "Preface\nHere you’ll find information on computational reproducibility.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#quarto-book",
+    "href": "index.html#quarto-book",
+    "title": "reproduce",
+    "section": "Quarto Book",
+    "text": "Quarto Book\n\nCreate new project &gt; “Quarto book”\n\ncheck “use renv with this project”\ncheck “create a git repository”\n\n\n\nCreate pages\n\n\nPut this into .gitignore\n/.quarto/ /_site/\n\n\nPublish\nPut this into the terminal: quarto publish gh-pages",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "41_solutions_fileformat.html",
+    "href": "41_solutions_fileformat.html",
+    "title": "2  Open file formats and software",
+    "section": "",
+    "text": "Reproducibility in research relies on sharing both the steps used to analyze data and the data itself. Using open file formats and free, open-source software helps make these resources available to everyone. With software such as R and Python, researchers can document their data analysis procedures (in so-called scripts) that others can reuse or adapt.\nFor those less familiar with programming, point-and-click tools like JASP, jamovi, and PSPP offer user-friendly alternatives. These free options remove financial barriers and make it easier for others to verify and build on your work. In contrast, proprietary software such as SPSS or MPlus restricts accessibility, limiting reproducibility to users who can afford expensive licenses.\n\nAdvantages\n\nFundamentally enables reproducibility, as other researchers can open and run the analyses\nOpen-source software lets researchers see how the software processes data when using its functions\nPromotes equity in access to research\n\n\n\nResources\nIntro to python(edX online course) Intro to R(edX online course)\nIntro to JASP(youtube: JASP Statistics) Intro to jamovi(youtube: freeCodeCamp.org)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Open file formats and software</span>"
+    ]
+  },
+  {
+    "objectID": "42_solutions_inputoutput.html",
+    "href": "42_solutions_inputoutput.html",
+    "title": "3  Input-output-documents (“Notebooks”)",
+    "section": "",
+    "text": "Mouse over image to zoom\n\n\nInput-output documents integrate data analysis code (input) with corresponding results (output) in a unified format. Tools such as RMarkdown, Quarto Markdown, and Jupyter Notebooks (compatible with R or Python) enable the combination of code, results, and explanatory text—such as interpretations—into a single document exportable as HTML or PDF. Similarly, JASP and jamovi provide built-in functionality to achieve this integration within their platforms.\n\nAdvantages\n\nProvides provenance of results: Directly links transparent inputs to outputs\nEnsures error-free output: HTML/PDF documents are only rendered if all code, from data import to variable manipulation and analysis, runs without errors\nEnhances understandability: Enables detailed explanations of analytical approaches and result interpretations\n\n\n\nResources\n“Get started with Quarto”(youtube: Posit PBC) Share & annotate JASP(youtube: JASP Statistics)\nShare jamovi(youtube: codecamp.org) Annotate jamovi(youtube: Alexander Swan, Ph.D.)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Input-output-documents (\"Notebooks\")</span>"
+    ]
+  },
+  {
+    "objectID": "43_solutions_version.html",
+    "href": "43_solutions_version.html",
+    "title": "4  Containerization and version management",
+    "section": "",
+    "text": "R and Python use additional extensions (“packages”) to expand their basic functions for data analysis. However, differences in the versions of these packages can create compatibility issues, even when researchers are using the same system. Packages like renv and groundhog for R help address this by maintaining consistent versions, ensuring that analyses remain accessible and reliable over time.\nBeyond package management, maintaining compatibility across system requirements—such as operating systems and software versions—is critical for ensuring portability. Containerization tools like Docker and the Holepunch package for R provide solutions by encapsulating scripts and their dependencies into isolated environments. This approach preserves the original system configuration, enabling reproducibility of analysis scripts across different platforms. To what extent JASP and jamovi will be backwards compatible in the future is not entirely clear.\nTo tackle both challenges simultaneously, the rix package offers an integrated solution, combining system requirements management with package version control to streamline reproducibility efforts.\n\nAdvantages\n\nData analysis is sustainable over longer period of time\nEqual system environment between researchers\nEqual package versions between researchers\n\n\n\nResources\nTutorial: Holepunch Tutorial: renv Tutorial: groundhog\nTutorial: rix video tutorial: rix(youtube: useR! Conference)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Containerization and version management</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "5  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

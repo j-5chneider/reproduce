@@ -1,0 +1,22 @@
+# Input-output-documents ("Notebooks")
+
+![](www/input_output.jpg){.top-img .zoom}  
+*Mouse over image to zoom*  
+\
+
+Input-output documents integrate data analysis code (input) with corresponding results (output) in a **unified format**. Tools such as RMarkdown, Quarto Markdown, and Jupyter Notebooks (compatible with R or Python) enable the combination of code, results, and explanatory text—such as interpretations—into a single document exportable as HTML or PDF. Similarly, JASP and jamovi provide built-in functionality to achieve this integration within their platforms. 
+
+### Advantages {.unnumbered}
+
+-   Provides provenance of results: Directly links transparent inputs to outputs
+-   Ensures error-free output: HTML/PDF documents are only rendered if all code, from data import to variable manipulation and analysis, runs without errors
+-   Enhances understandability: Enables detailed explanations of analytical approaches and result interpretations
+
+
+### Resources {.unnumbered}
+
+<a href="https://www.youtube.com/watch?v=_f3latmOhew" target="_blank" class="infobtn">![](www/quarto_logo.png){width="100"}<br /><b>"Get started with Quarto"</b><br>(youtube: Posit PBC)</a> 
+<a href="https://youtu.be/APRaBFC2lEQ?si=AzTjo23V0fSEelA9&amp;t=150" target="_blank" class="infobtn">![](www/jasp_logo.png){width="100"}<br /><b>Share &amp; annotate JASP</b><br>(youtube: JASP Statistics)</a>   
+  
+<a href="https://youtu.be/mZomeS0tLxY?si=2Jjt89RhhMKWLTLR&amp;t=534" target="_blank" class="infobtn">![](www/jamovi_logo.png){width="100"}<br /><b>Share jamovi</b><br>(youtube: codecamp.org)</a> 
+<a href="https://youtu.be/I6SZtH__ICA?si=1Gmtth3HNbBTyueO&amp;t=64" target="_blank" class="infobtn">![](www/jamovi_logo.png){width="100"}<br /><b>Annotate jamovi</b><br>(youtube: Alexander Swan, Ph.D.)</a>

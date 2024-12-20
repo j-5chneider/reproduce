@@ -1,0 +1,26 @@
+# Containerization and version management
+
+R and Python use additional extensions ("packages") to expand their basic functions for data analysis. However, differences in the **versions** of these packages can create compatibility issues, even when researchers are using the same system. Packages like renv and groundhog for R help address this by maintaining consistent versions, ensuring that analyses remain accessible and reliable over time.
+  
+Beyond package management, maintaining compatibility across **system requirements**—such as operating systems and software versions—is critical for ensuring portability. Containerization tools like Docker and the Holepunch package for R provide solutions by encapsulating scripts and their dependencies into isolated environments. This approach preserves the original system configuration, enabling reproducibility of analysis scripts across different platforms. To what extent JASP and jamovi will be backwards compatible in the future is not entirely clear.
+  
+To tackle **both challenges** simultaneously, the rix package offers an integrated solution, combining system requirements management with package version control to streamline reproducibility efforts.
+
+### Advantages {.unnumbered}
+
+
+-   Data analysis is sustainable over longer period of time
+-   Equal system environment between researchers
+-   Equal package versions between researchers
+
+
+
+### Resources {.unnumbered}
+
+
+<a href="https://karthik.github.io/holepunch/" target="_blank" class="infobtn">![](www/holepunch_logo.png){width="110"}<br /><b>Tutorial: Holepunch</b><br></a>
+<a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank" class="infobtn">![](www/renv_logo.png){width="100"}<br /><b>Tutorial: renv</b><br></a>
+<a href="https://groundhogr.com/" target="_blank" class="infobtn">![](www/groundhog_logo.png){width="110"}<br /><b>Tutorial: groundhog</b><br></a>  
+  
+<a href="https://ropensci.github.io/rix/" target="_blank" class="infobtn">![](www/rix_logo.png){width="100"}<br /><b>Tutorial: rix</b><br></a>
+<a href="https://www.youtube.com/watch?v=tM4JrCWZpwA" target="_blank" class="infobtn">![](www/rix_logo.png){width="100"}<br /><b>video tutorial: rix</b><br>(youtube: useR! Conference)</a>

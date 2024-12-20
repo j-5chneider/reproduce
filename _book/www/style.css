@@ -1,0 +1,34 @@
+.infobtn {
+    display: inline-block;
+    padding: 7px 15px;
+    background-color: #f8e3df;
+    color: #200b07;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #bd7569;
+    margin-top: 20px;
+}
+
+.infobtn:hover {
+    background-color: #d66450;
+    color: #fff;
+}
+
+.top-img {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+
+.zoom {
+  transition: transform .2s;
+  }
+
+.zoom:hover {
+  -ms-transform: scale(1.4); /* IE 9 */
+  -webkit-transform: scale(1.4); /* Safari 3-8 */
+  transform: scale(1.4); 
+  transform-origin:top left;
+  z-index: 999;
+}
