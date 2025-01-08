@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "reproduce",
+    "title": "Computational Reproducibility",
     "section": "",
     "text": "Preface\nHere you’ll find information on computational reproducibility.",
     "crumbs": [
@@ -12,9 +12,9 @@
   {
     "objectID": "index.html#quarto-book",
     "href": "index.html#quarto-book",
-    "title": "reproduce",
+    "title": "Computational Reproducibility",
     "section": "Quarto Book",
-    "text": "Quarto Book\n\nCreate new project &gt; “Quarto book”\n\ncheck “use renv with this project”\ncheck “create a git repository”\n\n\n\nCreate pages\n\n\nPut this into .gitignore\n/.quarto/ /_site/\n\n\nPublish\nPut this into the terminal: quarto publish gh-pages",
+    "text": "Quarto Book\n\nCreate new project &gt; “Quarto book”\n\ncheck “use renv with this project”\ncheck “create a git repository”\n\n\n\nCreate pages\n\n\nPut this into .gitignore\n/.quarto/ /_site/\n\n\nPublish\nFirst time, connect to github: renv::install(“usethis”) usethis::use_git_config( user.name = “Jane Doe”, # &lt;– change to your name user.email = “jane@example.org”, # &lt;– and your email init.defaultBranch = “main”) # &lt;– not necessary but kinder than ‘master’\nusethis::use_git()\nusethis::create_github_token(description = “Token for project …”) # &lt;– Fill in a name of your token\nusethis::use_github()\n\n\nPut this into the terminal:\nquarto publish gh-pages",
     "crumbs": [
       "Preface"
     ]

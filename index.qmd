@@ -18,7 +18,21 @@ Here you'll find information on computational reproducibility.
 
 ### Publish
 First time, connect to github:
+renv::install("usethis")
+usethis::use_git_config(
+  user.name = "Jane Doe", # <-- change to your name
+  user.email = "jane@example.org", # <-- and your email
+  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
+
+usethis::use_git()
+
+usethis::create_github_token(description = "Token for project ...") # <-- Fill in a name of your token
+credentials::set_github_pat()
+
+usethis::use_github()
 
 
-Put this into the terminal:
+
+
+### Put this into the terminal:
 quarto publish gh-pages

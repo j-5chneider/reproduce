@@ -16,3 +16,13 @@
   margin-top: 25%;
   margin-bottom: 15%;
 }
+
+.narrative-col h1, .narrative-col h2 {
+  color: #fff;
+}
+
+
+.sticky-col strong {
+  color: #E07B00;
+  font-weight: 900;
+}
