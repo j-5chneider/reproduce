@@ -21,6 +21,7 @@ format:
       # narrative-background-color-overlay: "#044040"
       # narrative-text-color-overlay: "#F2F2F2"
       poem-font-family: Nunito Sans
+    embed-resources: true # will make standalone html file
 theme: lux
 css: www/style.css
 bibliography: www/references.bib
@@ -33,36 +34,10 @@ library(ggplot2)
 
 :::{.cr-section}
 
-
-Aus dem Forschungsalltag [@cr-story1]{scale-by="1" pan-to="0%,0%"}
-
-:::{#cr-story1}
-
-![](www/fig1_1.png){.fig-story}
+:::{focus-on="cr-def"}
+# Computative Reproduzierbarkeit
+## Definition
 :::
-
-
-Voraussetzungen @cr-story2
-
-
-Kompatibel mit der Softwareversion der Kolleg*innen? [@cr-story2]{scale-by="2" pan-to="30%,80%"}
-
-:::{#cr-story2}
-
-![](www/fig1_2.png){.fig-story}
-:::
-
-
-Software potenziell kostenfrei installierbar? [@cr-story2]{scale-by="2" pan-to="30%,30%"}
-
-
-Welche Rechnungen entsprechen welchen Hypothesen im Manuskript?<br /><br />Logik des Umgangs mit Ausreißern? [@cr-story2]{scale-by="2" pan-to="30%,-25%"}
-
-
-Version der Paket-Erweiterungen eindeutig? [@cr-story2]{scale-by="2" pan-to="30%,-75%"}
-
-
-Computative Reproduzierbarkeit<br />Definition @cr-def
 
 :::{#cr-def}
 
@@ -78,7 +53,16 @@ Computative Reproduzierbarkeit<br />Definition @cr-def
 
 
 
-Computative Reproduzierbarkeit<br />ist nicht selbstverständlich @cr-artner
+
+
+
+
+
+
+:::{focus-on="cr-artner"}
+# Computative Reproduzierbarkeit
+## ist nicht selbstverständlich
+:::
 
 :::{#cr-artner}
 
@@ -130,17 +114,153 @@ ggplot(artner, aes(x=what, y=count)) +
 
 
 
-Computative Reproduzierbarkeit<br />Voraussetzungen @cr-pillars
+
+
+
+:::{focus-on="cr-story1" scale-by="1" pan-to="0%,0%"}
+# Computative Reproduzierbarkeit
+## im Forschungsalltag
+:::
+
+:::{#cr-story1}
+
+![](www/fig1_1.png){.fig-story}
+:::
+
+
+
+
+
+:::{focus-on="cr-story2"}
+# Computative Reproduzierbarkeit
+## Voraussetzungen
+:::
+
+
+
+
+:::{focus-on="cr-story2" scale-by="2" pan-to="30%,80%"}
+## Kompatibel mit der Softwareversion der Kolleg*innen?
+:::
+
+:::{#cr-story2}
+
+![](www/fig1_2.png){.fig-story}
+:::
+
+
+:::{focus-on="cr-story2" scale-by="2" pan-to="30%,30%"}
+## Software potenziell kostenfrei installierbar?
+:::
+
+
+:::{focus-on="cr-story2" scale-by="2" pan-to="30%,-25%"}
+## Welche Rechnungen entsprechen welchen Hypothesen im Manuskript?
+## Logik des Umgangs mit Ausreißern?
+:::
+
+:::{focus-on="cr-story2" scale-by="2" pan-to="30%,-75%"}
+## Version der Paket-Erweiterungen eindeutig?
+:::
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-pillars"}
+# Computative Reproduzierbarkeit
+## Voraussetzungen
+:::
 
 :::{#cr-pillars}
 
 * **Kostenfreie** (idealerweise open source) Software
-* "Literate Programming": **Text** ergänzend zu Analysen und deren Output
+* "Literate Programming": Input, Output und ergänzender **Text** in einer Datei
 * "Compute environment control": Paket- & Software**versionen**
 
 [@Ziemann.etal.2023]
 
 :::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-software1"}
+# Kostenfreie Software
+## R, JASP, JAMOVI, Python, PSPP, ...
+:::
+
+:::{#cr-software1}
+
+![](www/software1.png)
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-software2"}
+# Niederschwelliger Übergang von SPSS
+:::
+
+:::{focus-on="cr-software2" scale-by="2" pan-to="50%, 0"}
+# JAMOVI
+:::
+
+:::{focus-on="cr-software2" scale-by="2" pan-to="-50%, 0"}
+# JASP
+:::
+
+:::{#cr-software2}
+
+::::{.columns}
+
+:::{.column width="49%"}
+![](www/jamovi_regression.jpg)
+:::
+
+:::{.column width="2%"}
+:::
+
+:::{.column width="49%"}
+![](www/jasp_regression.jpg)
+:::
+::::
+:::
+
+
+
+
+
+
+
 
 
 
