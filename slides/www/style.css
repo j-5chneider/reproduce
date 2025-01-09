@@ -1,6 +1,11 @@
-.fig-story {
-  width: 50%;
+.fig-story70 {
+  width: 70%;
   margin-left: 10%;
+}
+
+.fig-story95 {
+  width: 95%;
+  margin-left: 5%;
 }
 
 #cr-artner > p {
@@ -12,13 +17,18 @@
   
 }
 
+
+.border1{
+  border: 1px solid darkgrey;
+}
+
 .quarto-title {
   margin-top: 25%;
   margin-bottom: 15%;
 }
 
-.narrative-col h1, .narrative-col h2 {
-  color: #fff;
+.narrative-col h1, .narrative-col h2, .narrative-col a {
+  color: #fff !important;
 }
 
 

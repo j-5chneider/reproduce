@@ -1,0 +1,36 @@
+---
+title: "Analysen"
+editor: visual
+---
+
+Das sind die Analysen für das Paper ...
+
+```{r}
+#| message: false
+
+library(rio)
+library(dplyr)
+
+# Daten einlesen
+mydata <- import("mydata.csv")
+```
+
+# Skalenbildung
+
+Zunächst wird das Item 2 umgepolt, dann der Mittelwert über item1 und item2 gebildet.
+
+```{r}
+# umpolen
+mydata$item2_r <- 7 - mydata$item2
+
+# Skala bilden
+mydata <- mydata |>
+  mutate(lernleistung = rowMeans(data.frame(item1, item2_r)))
+```
+
+# Hypothese 1
+
+```{r}
+fit <- lm(lernleistung ~ lesekompetenz, data = mydata)
+summary(fit)
+```

@@ -29,6 +29,8 @@ bibliography: www/references.bib
 
 ```{r}
 library(ggplot2)
+library(fontawesome)
+# library(icons)
 ```
 
 
@@ -124,7 +126,7 @@ ggplot(artner, aes(x=what, y=count)) +
 
 :::{#cr-story1}
 
-![](www/fig1_1.png){.fig-story}
+![](www/fig1_1a.png){.fig-story70}
 :::
 
 
@@ -140,12 +142,12 @@ ggplot(artner, aes(x=what, y=count)) +
 
 
 :::{focus-on="cr-story2" scale-by="2" pan-to="30%,80%"}
-## Kompatibel mit der Softwareversion der Kolleg*innen?
+## Kompatibel mit der Softwareversion der Kolleg:innen?
 :::
 
 :::{#cr-story2}
 
-![](www/fig1_2.png){.fig-story}
+![](www/fig1_2a.png){.fig-story70}
 :::
 
 
@@ -175,14 +177,12 @@ ggplot(artner, aes(x=what, y=count)) +
 
 :::{focus-on="cr-pillars"}
 # Computative Reproduzierbarkeit
-## Voraussetzungen
+## Möglichkeiten
 :::
 
 :::{#cr-pillars}
 
-* **Kostenfreie** (idealerweise open source) Software
-* "Literate Programming": Input, Output und ergänzender **Text** in einer Datei
-* "Compute environment control": Paket- & Software**versionen**
+![](www/fig1_3.png){.fig-story70}
 
 [@Ziemann.etal.2023]
 
@@ -254,6 +254,310 @@ ggplot(artner, aes(x=what, y=count)) +
 :::
 ::::
 :::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-literate"}
+# Literate programming
+## Verbindet Input, Output und ergänzenden Text in einer Datei
+Hier klicken für [ein Beispiel](https://raw.githack.com/j-5chneider/uzvvtp-las/refs/heads/master/5_validation/validation.html).
+:::
+
+:::{focus-on="cr-literate" scale-by="1.4" pan-to="30%,0"}
+# Quarto Markdown,
+# RMarkdown,
+# jupyter Notebooks
+:::
+
+
+:::{focus-on="cr-literate" scale-by="1.4" pan-to="-30%,0"}
+# Kompiliert als
+# HTML, PDF, Word, ...
+:::
+
+
+:::{#cr-literate}
+
+![](www/input_output.jpg){.fig-story95}
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-literate2"}
+
+# "Notes"
+## in JASP und jamovi
+
+:::
+
+:::{focus-on="cr-literate2" scale-by="2" pan-to="50%, 0"}
+# JAMOVI
+:::
+
+:::{focus-on="cr-literate2" scale-by="2" pan-to="-50%, 0"}
+# JASP
+:::
+
+
+:::{#cr-literate2}
+::::{.columns}
+
+:::{.column width="49%"}
+![](www/jasp_note1.jpg){.border1}
+:::
+
+:::{.column width="2%"}
+:::
+
+:::{.column width="49%"}
+![](www/jasp_note2.jpg){.border1}
+:::
+::::
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen1"}
+# Kontrolle der
+## Paket- und Softwareversion
+:::
+
+
+:::{#cr-versionen1}
+
+![](www/paket-software.png){.fig-story95}  
+
+`r fa("long-arrow-right")` Problemlos integrierbar in Ihren bestehenden, **gewohnten Workflow**!
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen2"}
+![](www/renv_logo.png)   
+
+## Paketmanagement in R
+:::
+
+
+:::{#cr-versionen2}
+
+## Nutzer:in 1
+```{r}
+#| eval: false
+#| echo: true
+
+renv::init()     # 1x zu Beginn des R-Projekts
+
+renv::snapshot() # Dokumentation der genutzten Pakete 
+                 # (nur nötig nach Installation neuer Pakete)
+```
+
+## Nutzer:in 2
+```{r}
+#| eval: false
+#| echo: true
+
+renv::restore()  # um die Paketversionen von Nutzer:in 1 herzustellen
+```
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen3"}
+![](www/renv_logo.png)
+:::
+
+
+:::{#cr-versionen3}
+`renv::init()` generiert u.a. ...
+
+* einen **Projekt-spezifischen** Ordner für genutzte Pakete
+* eine Datei, in der **Informationen über die Pakete** dokumentiert werden (z. B. Version)
+
+![](www/renv_init.png)
+:::
+
+
+:::{focus-on="cr-versionen3a"}
+![](www/renv_logo.png)   
+:::
+
+
+:::{#cr-versionen3a}
+
+`renv::init()` ist Äquivalent zu:  
+![](www/renv_create.jpg)
+:::
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen4"}
+![](www/renv_logo.png)   
+:::
+
+
+:::{#cr-versionen4}
+**Wie üblich**
+
+* Pakete installieren
+* R-Code (Ihre Datenanalyse) schreiben
+
+**Dann** `renv::snapshot()` ausführen, um z. B.
+
+* genutzte Pakete
+* deren Version
+* deren Abhängigkeiten **automatisch festzuhalten**
+
+![](www/renv_snapshot.jpg){width=80%}
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen5"}
+![](www/holepunch_logo.png)
+
+# Softwareumgebung durch "Container"
+:::
+
+
+:::{#cr-versionen5}
+
+**Holepunch** stellt passende Softwareumgebung her (z. B. R-Version):  
+(benötigt GitHub)
+
+## Nutzer:in 1
+```{r}
+#| eval: false
+#| echo: true
+
+library(holepunch)
+write_install() # Writes install.R with all your dependencies
+write_runtime() # Writes the date your code was last modified.
+
+generate_badge() # Generates a badge you can add to your README. Clicking badge will launch the Binder.
+# Now push to GitHub
+```
+
+## Nutzer:in 2
+![](www/binder.jpg){width=65%}
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen6"}
+# Beispiel
+## Klick auf Button in [diesem Repo](https://github.com/j-5chneider/subcommunitiesOS) führt zu...
+:::
+
+
+:::{#cr-versionen6}
+![](www/binder_browser.jpg){.fig-story95}
+:::
+
+
+
+
+
+
+
+
+
 
 
 
