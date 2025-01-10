@@ -242,14 +242,14 @@ ggplot(artner, aes(x=what, y=count)) +
 
 ::::{.columns}
 
-:::{.column width="49%"}
+:::{.column width="48%"}
 ![](www/jamovi_regression.jpg)
 :::
 
 :::{.column width="2%"}
 :::
 
-:::{.column width="49%"}
+:::{.column width="48%"}
 ![](www/jasp_regression.jpg)
 :::
 ::::
@@ -312,35 +312,35 @@ Hier klicken für [ein Beispiel](https://raw.githack.com/j-5chneider/uzvvtp-las/
 
 :::{focus-on="cr-literate2"}
 
-# "Notes"
+# "Add Notes" & "Edit Title"
 ## in JASP und jamovi
 
 :::
 
 :::{focus-on="cr-literate2" scale-by="2" pan-to="50%, 0"}
-# JAMOVI
 :::
 
 :::{focus-on="cr-literate2" scale-by="2" pan-to="-50%, 0"}
-# JASP
 :::
 
 
 :::{#cr-literate2}
 ::::{.columns}
 
-:::{.column width="49%"}
+:::{.column width="48%"}
 ![](www/jasp_note1.jpg){.border1}
 :::
 
 :::{.column width="2%"}
 :::
 
-:::{.column width="49%"}
+:::{.column width="48%"}
 ![](www/jasp_note2.jpg){.border1}
 :::
 ::::
 :::
+
+
 
 
 
@@ -448,6 +448,7 @@ renv::restore()  # um die Paketversionen von Nutzer:in 1 herzustellen
 :::{#cr-versionen3a}
 
 `renv::init()` ist Äquivalent zu:  
+  
 ![](www/renv_create.jpg)
 :::
 
@@ -522,7 +523,7 @@ generate_badge() # Generates a badge you can add to your README. Clicking badge 
 ```
 
 ## Nutzer:in 2
-![](www/binder.jpg){width=65%}
+![](www/binder.jpg){width=62%}
 :::
 
 
@@ -568,8 +569,136 @@ generate_badge() # Generates a badge you can add to your README. Clicking badge 
 
 
 
+:::{focus-on="cr-discussion1"}
+
+# Wo und wie anfangen?
+:::
 
 
+:::{#cr-discussion1 width="100%"}
+
+### Generell
+
+* Daten und Analysen teilen
+* In "Projekten" arbeiten, relative Pfade nutzen
+* Klare Ordnerstruktur und Readme-Dateien nutzen
+:::
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-discussion2"}
+
+# Wo und wie anfangen?
+:::
+
+
+
+:::{#cr-discussion2 width="100%"}
+::::{.columns}
+:::{.column .firstcol}
+
+### Software
+:::
+:::{.column .secondcol}
+
+### Literate Programming
+:::
+:::{.column .thirdcol}
+
+### Paket- & Softwareversion
+:::
+:::{.column .fourthcol}
+
+### Wie teilen?
+:::
+::::
+
+
+::::{.columns}
+:::{.column .firstcol .addborder}
+![](www/jamovi_logo.png){width="40%"}![](www/jasp_logo.png){width="40%"}
+:::
+:::{.column .secondcol .addborder}
+
+Kommentierung des Outputs ("Add Note", "Edit Title")
+:::
+:::{.column .thirdcol .addborder}
+keine
+:::
+:::{.column .fourthcol .addborder}
+.jasp bzw. .omv Datei (E-Mail, github, Supplement)
+:::
+::::
+
+
+::::{.columns}
+:::{.column .firstcol .addborder}
+![](www/rstudio_icon.png){width="40%"}
+:::
+:::{.column .secondcol .addborder}
+![](www/quarto_logo.png){width="20%"}![](www/rmarkdown_logo.png){width="20%"}  
+Input-Output-Dokument via Quarto oder RMarkdown
+:::
+:::{.column .thirdcol .addborder}
+keine
+:::
+:::{.column .fourthcol .addborder}
+Input-Output-Dokument als HTML oder PDF (E-Mail, github, Supplement)
+:::
+::::
+
+
+::::{.columns}
+:::{.column .firstcol .addborder}
+![](www/rstudio_icon.png){width="40%"}
+:::
+:::{.column .secondcol .addborder}
+keine
+:::
+:::{.column .thirdcol .addborder}
+![](www/renv_logo.png){width=20%}  
+Versionskontrolle via renv
+:::
+:::{.column .fourthcol .addborder}
+Projektordner (E-Mail, github, OSF, zenodo)
+:::
+::::
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+@cr-last
+
+:::{#cr-last}
+
+# Vielen Dank!
+\
+
+## **Jürgen Schneider**
+![](www/dipf-logo.png)
+  
+<ju.schneider@dipf.de>
+
+:::
 
 :::
 

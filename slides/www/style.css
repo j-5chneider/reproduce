@@ -1,11 +1,27 @@
+/*body {
+  font-size: 1.5em;
+}*/
+
+
+.narrative-col, .sticky-col {
+  font-size: 1.5em !important;
+}
+
+
+.sticky-col {
+  width: 98% !important;
+}
+
+
+
 .fig-story70 {
   width: 70%;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .fig-story95 {
-  width: 95%;
-  margin-left: 5%;
+  width: 92%;
+  margin-left: 3%;
 }
 
 #cr-artner > p {
@@ -35,4 +51,19 @@
 .sticky-col strong {
   color: #E07B00;
   font-weight: 900;
+}
+
+
+
+.firstcol {
+  width: 15% !important;
+}
+
+.secondcol, .thirdcol, .fourthcol {
+  width: 28% !important;
+}
+
+.addborder {
+  border-top: 1px solid grey;
+  padding-top: 10px !important;
 }
