@@ -1,7 +1,7 @@
 # Input-output-documents ("Notebooks")
 
 ![](www/input_output.jpg){.top-img .zoom}  
-*Mouse over image to zoom*  
+*Quarto Markdown in R: Mouse over image to zoom*  
 \
 
 Input-output documents integrate data analysis code (input) with corresponding results (output) in a **unified format**. Tools such as RMarkdown, Quarto Markdown, and Jupyter Notebooks (compatible with R or Python) enable the combination of code, results, and explanatory text—such as interpretations—into a single document exportable as HTML or PDF. Similarly, JASP and jamovi provide built-in functionality to achieve this integration within their platforms. 
@@ -10,10 +10,94 @@ Input-output documents integrate data analysis code (input) with corresponding r
 
 -   Provides provenance of results: Directly links transparent inputs to outputs
 -   Ensures error-free output: HTML/PDF documents are only rendered if all code, from data import to variable manipulation and analysis, runs without errors
--   Enhances understandability: Enables detailed explanations of analytical approaches and result interpretations
+-   Enhances understandability for others and your future self: Enables detailed explanations of analytical approaches and result interpretations
+
+### First easy steps {.unnumbered}
+
+Creating input-output documents requires only **minimal adjustments** to your existing workflow.
+
+The additional information text you might include to make your data analyses more transparent can vary across projects. However, it can be helpful to communicate the following:
+
+- **Rationale for Decisions**<br />Share the reasoning behind key methodological choices, such as removing outliers, selecting the number of imputed datasets when addressing missing data, or computing specific contrasts. These explanations can make your analysis easier to follow.
+- **Connection to Manuscript Sections**<br />Organize your documentation in a way that aligns with the structure of your manuscript. For example, headings like “Treatment Check” or “Hypothesis 1a” can improve readability and help readers navigate the document more efficiently.
 
 
-### Resources {.unnumbered}
+
+::: {.callout-tip collapse="true" title="With JASP"}
+::::{.columns}
+:::{.column width="33%"}
+![](www/jasp_title.jpg){.top-img .zoom-big}
+:::
+:::{.column width="1%"}
+:::
+:::{.column width="66%"}
+Edit headings and the title by clicking on the down arrow.  
+*Mouse over image to zoom*
+:::
+::::
+
+::::{.columns}
+:::{.column width="33%"}
+![](www/jasp_note.jpg){.top-img .zoom-big}
+:::
+:::{.column width="1%"}
+:::
+:::{.column width="66%"}
+Add notes to any heading or table by clicking on the down arrow.  
+*Mouse over image to zoom*
+:::
+::::
+
+\
+
+After you computed you analyses, edited titles and added notes: **Share the .jasp-file** (e.g., on [zenodo](https://zenodo.org/), as supplement to your manuscript or via email).  
+  
+This file will **contain everything** from data and analyses to titles and notes in your output!
+:::
+
+::: {.callout-tip collapse="true" title="With jamovi"}
+::::{.columns}
+:::{.column width="33%"}
+![](www/jamovi_edit.jpg){.top-img .zoom-big}
+:::
+:::{.column width="1%"}
+:::
+:::{.column width="66%"}
+Click on the **edit tab** in the menu on the top, to edit all parts of the output (except results themselves). Change titles to fit the sections of your manuscript and provide further information below titles or around tables and figures.  
+*Mouse over image to zoom*
+:::
+::::
+
+\
+
+After you computed you analyses, edited titles and added notes: **Share the .omv-file** (e.g., on [zenodo](https://zenodo.org/), as supplement to your manuscript or via email).  
+  
+This file will **contain everything** from data and analyses to titles and notes in your output!
+
+:::
+
+::: {.callout-tip collapse="true" title="With R or python"}
+::::{.columns}
+:::{.column width="33%"}
+![](www/quarto_intro.png){.top-img .zoom-big}  
+*Mouse over image to zoom: Quarto visual editor (left) and rendered HTML (right)*
+:::
+:::{.column width="1%"}
+:::
+:::{.column width="66%"}
+[Quarto](https://quarto.org/docs/get-started/hello/rstudio.html) is a file format that allows you to provide all your code (from importing to wrangling, transforming and analyzing data) along with (but not limited to) additional text and images.   
+  
+The advantage of Quarto over RMarkdown is that it works simultaneously with R, Python, Javascript and Julia. It is also **pre-installed in RStudio**: Go to *File* > *New File* > *Quarto Document*.  
+  
+Quarto has a **visual editor** that works like familiar word processing programs, such as Google Docs or Microsoft Word. In Quarto, you can add special sections called “code chunks” (shown as grey boxes in the picture). These chunks are where you can write or paste R or Python code. If you already have your code in another file, you can just **copy and paste** it into these chunks. You can also add headings and extra text anywhere in the document to explain your code or organize your work.
+
+Finally, **render the entire document** to HTML, PDF or Word by clicking the "render" button.
+:::
+::::
+:::
+
+
+### Free Resources {.unnumbered}
 
 <a href="https://www.youtube.com/watch?v=_f3latmOhew" target="_blank" class="infobtn">![](www/quarto_logo.png){width="100"}<br /><b>"Get started with Quarto"</b><br>(youtube: Posit PBC)</a> 
 <a href="https://youtu.be/APRaBFC2lEQ?si=AzTjo23V0fSEelA9&amp;t=150" target="_blank" class="infobtn">![](www/jasp_logo.png){width="100"}<br /><b>Share &amp; annotate JASP</b><br>(youtube: JASP Statistics)</a>   

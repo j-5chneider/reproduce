@@ -1,3 +1,12 @@
+---
+execute:
+  eval: false
+  echo: true
+  warning: false
+  message: false
+---
+
+
 # Containerization and version management
 
 R and Python use additional extensions ("packages") to expand their basic functions for data analysis. However, differences in the **versions** of these packages can create compatibility issues, even when researchers are using the same system. Packages like renv and groundhog for R help address this by maintaining consistent versions, ensuring that analyses remain accessible and reliable over time.
@@ -14,8 +23,104 @@ To tackle **both challenges** simultaneously, the rix package offers an integrat
 -   Equal package versions between researchers
 
 
+### First easy steps {.unnumbered}
 
-### Resources {.unnumbered}
+The management of packages and software versions is particularly relevant **for R and Python**, as **users have the ability** to ensure compatibility themselves. In contrast, whether older JASP or Jamovi project files can be opened in newer software versions depends largely on the decisions of the software developers, leaving users with limited control.  
+
+I recommend **starting with** ensuring the compatibility of **package versions**. Once you are confident in managing this, you can proceed to address system requirements, such as standardizing software versions.
+
+::: {.callout-tip collapse="true" title="Package management with renv (for R)"}
+::::{.columns}
+:::{.column width="49%"}
+#### You {.unnumbered}
+1. **Only once:**  
+Install `renv` by running
+```{r}
+install.packages("renv")
+```
+
+2. **Once per project:**  
+Make sure you work within an R-project (and not with single files)!  
+Initiate `renv` by running
+```{r}
+renv::init()
+```
+
+3. **Only in case you installed new packages:**  
+Document these new packages by running
+```{r}
+renv::snapshot()
+```
+
+4. **Now share your project with others** (e.g. via [Zenodo](https://zenodo.org/), [GitHub](https://github.com/), email)
+:::
+:::{.column width="2%"}
+:::
+:::{.column width="49%"}
+#### Others {.unnumbered}
+1. Install `renv` by running
+```{r}
+install.packages("renv")
+```
+2. Open the project they received from you
+3. To have the same package versions available, others need to run
+```{r}
+renv::restore()
+```
+:::
+::::
+:::
+
+
+
+
+
+
+
+::: {.callout-tip collapse="true" title="Package management with groundhog (for R)"}
+::::{.columns}
+:::{.column width="49%"}
+#### You {.unnumbered}
+1. **Only once:**  
+Install `groundhog` by running
+```{r}
+install.packages("groundhog")
+```
+
+2. **When starting RStudio:**  
+Load `groundhog` package by running
+```{r}
+library(groundhog)
+```
+
+3. **Only in case you installed new packages:**  
+Document these new packages by running
+```{r}
+groundhog.library(pkgs, "2023-09-01")
+```
+
+4. **Now share your project with others** (e.g. via [Zenodo](https://zenodo.org/), [GitHub](https://github.com/), email)
+:::
+:::{.column width="2%"}
+:::
+:::{.column width="49%"}
+#### Others {.unnumbered}
+1. Install `renv` by running
+```{r}
+install.packages("renv")
+```
+2. Open the project they received from you
+3. To have the same package versions available, others need to run
+```{r}
+renv::restore()
+```
+:::
+::::
+:::
+
+
+
+### Free Resources {.unnumbered}
 
 
 <a href="https://karthik.github.io/holepunch/" target="_blank" class="infobtn">![](www/holepunch_logo.png){width="110"}<br /><b>Tutorial: Holepunch</b><br></a>

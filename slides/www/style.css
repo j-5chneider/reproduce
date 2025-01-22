@@ -67,3 +67,8 @@
   border-top: 1px solid grey;
   padding-top: 10px !important;
 }
+
+
+.bigger-font {
+  font-size: 2em !important;
+}

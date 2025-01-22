@@ -15,6 +15,16 @@
     color: #fff;
 }
 
+.btn-index {
+  width: 33%;
+}
+
+mark {
+  background-color: #fff;
+}
+
+
+
 .top-img {
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -31,4 +41,19 @@
   transform: scale(1.4); 
   transform-origin:top left;
   z-index: 999;
+  position: relative;
+}
+
+
+.zoom-big {
+  transition: transform .2s;
+  }
+
+.zoom-big:hover {
+  -ms-transform: scale(4); /* IE 9 */
+  -webkit-transform: scale(4); /* Safari 3-8 */
+  transform: scale(4); 
+  transform-origin:top left;
+  z-index: 999;
+  position: relative;
 }

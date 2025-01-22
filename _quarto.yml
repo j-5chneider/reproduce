@@ -7,11 +7,9 @@ book:
   date: "18.12.2024"
   chapters:
     - index.qmd
-    - intro.qmd
     - 41_solutions_fileformat.qmd
     - 42_solutions_inputoutput.qmd
     - 43_solutions_version.qmd
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib

@@ -1,4 +1,7 @@
 # Open file formats and software
+![](www/software1.png)
+
+\
 
 Reproducibility in research relies on sharing both the steps used to analyze data and the data itself. Using open file formats and free, **open-source software** helps make these resources available to everyone. With software such as R and Python, researchers can document their data analysis procedures (in so-called scripts) that others can reuse or adapt.
 
@@ -10,7 +13,46 @@ For those less familiar with programming, **point-and-click tools** like JASP, j
 -   Open-source software lets researchers see how the software processes data when using its functions
 -   Promotes equity in access to research
 
-### Resources {.unnumbered}
+### First easy steps {.unnumbered}
+
+::: {.callout-tip collapse="true" title="Coming from SPSS"}
+::::{.columns}
+:::{.column width="33%"}
+![](slides/www/jamovi_regression.jpg){.top-img .zoom-big}  
+*jamovi: Mouse over image to zoom*  
+   
+![](slides/www/jasp_regression.jpg){.top-img .zoom-big}  
+*JASP: Mouse over image to zoom*
+:::
+
+:::{.column width="1%"}
+:::
+
+:::{.column width="66%"}
+In case your data is already saved and labelled in SPSS: **All** suggested **programs** can **read .sav files** and retain the labelling (such as variable and value labels)!
+  
+If you are used to **point-and-click user-interface**: jamovi and JASP are very similar to SPSS in look and feel. This means that there is usually no need for a longer period of familiarization with the program.  
+  
+**How to share:**   
+jamovi and JASP will automatically create project files that include everything including the data and output of your analyses. Therefore, after loading the data and computing analyses, you can simply share the .jasp (in JASP) or .omv (in jamovi) file with your colleagues or as a supplement to your publication. When others open this file, the data and all the calculated analyses will be available and ready to use in exactly the same way as with you.
+:::
+::::
+:::
+
+::: {.callout-tip collapse="true" title="Coming from MPlus, SAS or stata"}
+Learning a new language such as R or python isn't necessarily easily done within a day, it is a **continuous learning process**. The good news is: There are **many free resources** for an introduction to the language (examples see below) and for solving concrete problems you will run into.  
+  
+**Getting help:**     
+
+- You will usually find good documentation (or "help") of packages you use or vignettes (examples) of how they can be used. This is an example on [how to call and use the R help](https://aosmith.rbind.io/2020/04/28/r-documentation/).
+- The Python and R communities are very active online. If you face a problem, chances are someone else has already asked about it. A great place to find solutions is [stackoverflow.com](https://stackoverflow.com/).
+- Chatbots like ChatGPT are also a fantastic resource for solving problems in your R or Python code. They are trained to provide explanations and suggest fixes to help you tackle your challenges.
+:::
+
+
+
+
+### Free Resources {.unnumbered}
 
 <a href="https://www.edx.org/learn/data-science/harvard-university-introduction-to-data-science-with-python" target="_blank" class="infobtn">![](www/python_icon.png){width="100"}<br /><b>Intro to python</b><br />(edX online course)</a> 
 <a href="https://www.edx.org/learn/r-programming/harvard-university-data-science-r-basics" target="_blank" class="infobtn">![](www/rstudio_icon.png){width="100"}<br /><b>Intro to R</b><br />(edX online course)</a>   

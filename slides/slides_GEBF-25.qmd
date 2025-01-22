@@ -204,6 +204,7 @@ ggplot(artner, aes(x=what, y=count)) +
 
 
 :::{focus-on="cr-software1"}
+# &#10112; {.bigger-font}
 # Kostenfreie Software
 ## R, JASP, JAMOVI, Python, PSPP, ...
 :::
@@ -273,6 +274,7 @@ ggplot(artner, aes(x=what, y=count)) +
 
 
 :::{focus-on="cr-literate"}
+# &#10113; {.bigger-font}
 # Literate programming
 ## Verbindet Input, Output und ergänzenden Text in einer Datei
 Hier klicken für [ein Beispiel](https://raw.githack.com/j-5chneider/uzvvtp-las/refs/heads/master/5_validation/validation.html).
@@ -357,6 +359,7 @@ Hier klicken für [ein Beispiel](https://raw.githack.com/j-5chneider/uzvvtp-las/
 
 
 :::{focus-on="cr-versionen1"}
+# &#10114; {.bigger-font}
 # Kontrolle der
 ## Paket- und Softwareversion
 :::

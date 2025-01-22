@@ -1,38 +1,26 @@
-# Preface {.unnumbered}
-
-Here you'll find information on computational reproducibility.
-
-## Quarto Book
-
-### Create new project > "Quarto book"
-- check "use renv with this project"
-- check "create a git repository"
-
-### Create pages
 
 
-### Put this into .gitignore
-/.quarto/
-/_site/
-
-
-### Publish
-First time, connect to github:
-renv::install("usethis")
-usethis::use_git_config(
-  user.name = "Jane Doe", # <-- change to your name
-  user.email = "jane@example.org", # <-- and your email
-  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
-
-usethis::use_git()
-
-usethis::create_github_token(description = "Token for project ...") # <-- Fill in a name of your token
-credentials::set_github_pat()
-
-usethis::use_github()
+Here you'll find information on how to make your data analyses computational reproducibile.
 
 
 
 
-### Put this into the terminal:
-quarto publish gh-pages
+
+## General
+
+* Basic requirement: **Share** data and analyses (see [`closed_data()` function from WORCS](https://cjvanlissa.github.io/worcs/) or [synthpop package](https://www.synthpop.org.uk/get-started.html) in case you can't share data)
+* Set up your work as a **'project'**, where all related files (e.g., data, scripts, results) are stored together in a single folder (as with R-projects) or in a single file (as with JASP and jamovi). Avoid working with isolated files, and use **relative paths** to connect files within the project.
+* Use a clear folder structure and readme files
+
+The [Workflow for Open Reproducible Code in Science (WORCS)](https://doi.org/10.3233/DS-210031) is an excellent framework that also integrates recommendations we give here.
+
+
+
+
+
+## Contents
+See also navigation menu on the left.
+
+<a href="41_solutions_fileformat.qmd" class="infobtn btn-index"><mark><b>Open file formats and software</b><br />Ensuring cost-free access to your analyses</mark></a>
+<a href="42_solutions_inputoutput.qmd" class="infobtn btn-index"><mark><b>Input-output-documents</b><br />Making analyses comprehensible for yourself and others</mark></a>
+<a href="43_solutions_version.qmd" class="infobtn btn-index"><mark><b>Containerization and version management</b><br />Making analyses system-independent and sustainable</mark></a>
