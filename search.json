@@ -4,79 +4,59 @@
     "href": "index.html",
     "title": "Computational Reproducibility",
     "section": "",
-    "text": "Preface\nHere you’ll find information on computational reproducibility.",
+    "text": "General\nThe Workflow for Open Reproducible Code in Science (WORCS) is an excellent framework that also integrates recommendations we give here.",
     "crumbs": [
-      "Preface"
+      "General"
     ]
   },
   {
-    "objectID": "index.html#quarto-book",
-    "href": "index.html#quarto-book",
+    "objectID": "index.html#general",
+    "href": "index.html#general",
     "title": "Computational Reproducibility",
-    "section": "Quarto Book",
-    "text": "Quarto Book\n\nCreate new project &gt; “Quarto book”\n\ncheck “use renv with this project”\ncheck “create a git repository”\n\n\n\nCreate pages\n\n\nPut this into .gitignore\n/.quarto/ /_site/\n\n\nPublish\nFirst time, connect to github: renv::install(“usethis”) usethis::use_git_config( user.name = “Jane Doe”, # &lt;– change to your name user.email = “jane@example.org”, # &lt;– and your email init.defaultBranch = “main”) # &lt;– not necessary but kinder than ‘master’\nusethis::use_git()\nusethis::create_github_token(description = “Token for project …”) # &lt;– Fill in a name of your token credentials::set_github_pat()\nusethis::use_github()\n\n\nPut this into the terminal:\nquarto publish gh-pages",
+    "section": "",
+    "text": "Basic requirement: Share data and analyses (see closed_data() function from WORCS or synthpop package in case you can’t share data)\nSet up your work as a ‘project’, where all related files (e.g., data, scripts, results) are stored together in a single folder (as with R-projects) or in a single file (as with JASP and jamovi). Avoid working with isolated files, and use relative paths to connect files within the project.\nUse a clear folder structure and readme files",
     "crumbs": [
-      "Preface"
+      "General"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "objectID": "index.html#contents",
+    "href": "index.html#contents",
+    "title": "Computational Reproducibility",
+    "section": "Contents",
+    "text": "Contents\nSee also navigation menu on the left.\nOpen file formats and softwareEnsuring cost-free access to your analyses Input-output-documentsMaking analyses comprehensible for yourself and others Containerization and version managementMaking analyses system-independent and sustainable",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "General"
     ]
   },
   {
     "objectID": "41_solutions_fileformat.html",
     "href": "41_solutions_fileformat.html",
-    "title": "2  Open file formats and software",
+    "title": "1  Open file formats and software",
     "section": "",
     "text": "Reproducibility in research relies on sharing both the steps used to analyze data and the data itself. Using open file formats and free, open-source software helps make these resources available to everyone. With software such as R and Python, researchers can document their data analysis procedures (in so-called scripts) that others can reuse or adapt.\nFor those less familiar with programming, point-and-click tools like JASP, jamovi, and PSPP offer user-friendly alternatives. These free options remove financial barriers and make it easier for others to verify and build on your work. In contrast, proprietary software such as SPSS or MPlus restricts accessibility, limiting reproducibility to users who can afford expensive licenses.\n\nAdvantages\n\nFundamentally enables reproducibility, as other researchers can open and run the analyses\nOpen-source software lets researchers see how the software processes data when using its functions\nPromotes equity in access to research\n\n\n\nFirst easy steps\n\n\n\n\n\n\nComing from SPSS\n\n\n\n\n\n\n\n\njamovi: Mouse over image to zoom\n\nJASP: Mouse over image to zoom\n\n\n\nIn case your data is already saved and labelled in SPSS: All suggested programs can read .sav files and retain the labelling (such as variable and value labels)!\nIf you are used to point-and-click user-interface: jamovi and JASP are very similar to SPSS in look and feel. This means that there is usually no need for a longer period of familiarization with the program.\nHow to share:\njamovi and JASP will automatically create project files that include everything including the data and output of your analyses. Therefore, after loading the data and computing analyses, you can simply share the .jasp (in JASP) or .omv (in jamovi) file with your colleagues or as a supplement to your publication. When others open this file, the data and all the calculated analyses will be available and ready to use in exactly the same way as with you.\n\n\n\n\n\n\n\n\n\n\n\nComing from MPlus, SAS or stata\n\n\n\n\n\nLearning a new language such as R or python isn’t necessarily easily done within a day, it is a continuous learning process. The good news is: There are many free resources for an introduction to the language (examples see below) and for solving concrete problems you will run into.\nGetting help:\n\nYou will usually find good documentation (or “help”) of packages you use or vignettes (examples) of how they can be used. This is an example on how to call and use the R help.\nThe Python and R communities are very active online. If you face a problem, chances are someone else has already asked about it. A great place to find solutions is stackoverflow.com.\nChatbots like ChatGPT are also a fantastic resource for solving problems in your R or Python code. They are trained to provide explanations and suggest fixes to help you tackle your challenges.\n\n\n\n\n\n\nFree Resources\nIntro to python(edX online course) Intro to R(edX online course)\nIntro to JASP(youtube: JASP Statistics) Intro to jamovi(youtube: freeCodeCamp.org)",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Open file formats and software</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Open file formats and software</span>"
     ]
   },
   {
     "objectID": "42_solutions_inputoutput.html",
     "href": "42_solutions_inputoutput.html",
-    "title": "3  Input-output-documents (“Notebooks”)",
+    "title": "2  Input-output-documents (“Notebooks”)",
     "section": "",
-    "text": "Quarto Markdown in R: Mouse over image to zoom\n\n\nInput-output documents integrate data analysis code (input) with corresponding results (output) in a unified format. Tools such as RMarkdown, Quarto Markdown, and Jupyter Notebooks (compatible with R or Python) enable the combination of code, results, and explanatory text—such as interpretations—into a single document exportable as HTML or PDF. Similarly, JASP and jamovi provide built-in functionality to achieve this integration within their platforms.\n\nAdvantages\n\nProvides provenance of results: Directly links transparent inputs to outputs\nEnsures error-free output: HTML/PDF documents are only rendered if all code, from data import to variable manipulation and analysis, runs without errors\nEnhances understandability: Enables detailed explanations of analytical approaches and result interpretations\n\n\n\nFree Resources\n“Get started with Quarto”(youtube: Posit PBC) Share & annotate JASP(youtube: JASP Statistics)\nShare jamovi(youtube: codecamp.org) Annotate jamovi(youtube: Alexander Swan, Ph.D.)",
+    "text": "Quarto Markdown in R: Mouse over image to zoom\n\n\nInput-output documents integrate data analysis code (input) with corresponding results (output) in a unified format. Tools such as RMarkdown, Quarto Markdown, and Jupyter Notebooks (compatible with R or Python) enable the combination of code, results, and explanatory text—such as interpretations—into a single document exportable as HTML or PDF. Similarly, JASP and jamovi provide built-in functionality to achieve this integration within their platforms.\n\nAdvantages\n\nProvides provenance of results: Directly links transparent inputs to outputs\nEnsures error-free output: HTML/PDF documents are only rendered if all code, from data import to variable manipulation and analysis, runs without errors\nEnhances understandability for others and your future self: Enables detailed explanations of analytical approaches and result interpretations\n\n\n\nFirst easy steps\nCreating input-output documents requires only minimal adjustments to your existing workflow.\nThe additional information text you might include to make your data analyses more transparent can vary across projects. However, it can be helpful to communicate the following:\n\nRationale for DecisionsShare the reasoning behind key methodological choices, such as removing outliers, selecting the number of imputed datasets when addressing missing data, or computing specific contrasts. These explanations can make your analysis easier to follow.\nConnection to Manuscript SectionsOrganize your documentation in a way that aligns with the structure of your manuscript. For example, headings like “Treatment Check” or “Hypothesis 1a” can improve readability and help readers navigate the document more efficiently.\n\n\n\n\n\n\n\nWith JASP\n\n\n\n\n\n\n\n\n\n\n\nEdit headings and the title by clicking on the down arrow.\nMouse over image to zoom\n\n\n\n\n\n\n\n\nAdd notes to any heading or table by clicking on the down arrow.\nMouse over image to zoom\n\n\n\n\nAfter you computed you analyses, edited titles and added notes: Share the .jasp-file (e.g., on zenodo, as supplement to your manuscript or via email).\nThis file will contain everything from data and analyses to titles and notes in your output!\n\n\n\n\n\n\n\n\n\nWith jamovi\n\n\n\n\n\n\n\n\n\n\n\nClick on the edit tab in the menu on the top, to edit all parts of the output (except results themselves). Change titles to fit the sections of your manuscript and provide further information below titles or around tables and figures.\nMouse over image to zoom\n\n\n\n\nAfter you computed you analyses, edited titles and added notes: Share the .omv-file (e.g., on zenodo, as supplement to your manuscript or via email).\nThis file will contain everything from data and analyses to titles and notes in your output!\n\n\n\n\n\n\n\n\n\nWith R or python\n\n\n\n\n\n\n\n\nMouse over image to zoom: Quarto visual editor (left) and rendered HTML (right)\n\n\n\nQuarto is a file format that allows you to provide all your code (from importing to wrangling, transforming and analyzing data) along with (but not limited to) additional text and images.\nThe advantage of Quarto over RMarkdown is that it works simultaneously with R, Python, Javascript and Julia. It is also pre-installed in RStudio: Go to File &gt; New File &gt; Quarto Document.\nQuarto has a visual editor that works like familiar word processing programs, such as Google Docs or Microsoft Word. In Quarto, you can add special sections called “code chunks” (shown as grey boxes in the picture). These chunks are where you can write or paste R or Python code. If you already have your code in another file, you can just copy and paste it into these chunks. You can also add headings and extra text anywhere in the document to explain your code or organize your work.\nFinally, render the entire document to HTML, PDF or Word by clicking the “render” button.\n\n\n\n\n\n\n\nFree Resources\n“Get started with Quarto”(youtube: Posit PBC) Share & annotate JASP(youtube: JASP Statistics)\nShare jamovi(youtube: codecamp.org) Annotate jamovi(youtube: Alexander Swan, Ph.D.)",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Input-output-documents (\"Notebooks\")</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Input-output-documents (\"Notebooks\")</span>"
     ]
   },
   {
     "objectID": "43_solutions_version.html",
     "href": "43_solutions_version.html",
-    "title": "4  Containerization and version management",
+    "title": "3  Containerization and version management",
     "section": "",
-    "text": "R and Python use additional extensions (“packages”) to expand their basic functions for data analysis. However, differences in the versions of these packages can create compatibility issues, even when researchers are using the same system. Packages like renv and groundhog for R help address this by maintaining consistent versions, ensuring that analyses remain accessible and reliable over time.\nBeyond package management, maintaining compatibility across system requirements—such as operating systems and software versions—is critical for ensuring portability. Containerization tools like Docker and the Holepunch package for R provide solutions by encapsulating scripts and their dependencies into isolated environments. This approach preserves the original system configuration, enabling reproducibility of analysis scripts across different platforms. To what extent JASP and jamovi will be backwards compatible in the future is not entirely clear.\nTo tackle both challenges simultaneously, the rix package offers an integrated solution, combining system requirements management with package version control to streamline reproducibility efforts.\n\nAdvantages\n\nData analysis is sustainable over longer period of time\nEqual system environment between researchers\nEqual package versions between researchers\n\n\n\nFree Resources\nTutorial: Holepunch Tutorial: renv Tutorial: groundhog\nTutorial: rix video tutorial: rix(youtube: useR! Conference)",
+    "text": "R and python use additional extensions (“packages”) to expand their basic functions for data analysis. However, differences in the versions of these packages can create compatibility issues, even when researchers are using the same version of R of python. Packages like renv and groundhog for R help to keep these versions consistent.\nBeyond package management, maintaining compatibility across system requirements — such as operating systems and software versions — is critical for ensuring portability. Containerization tools like Docker and the holepunch package for R provide solutions by encapsulating scripts and their dependencies into isolated environments. To what extent JASP and jamovi will be backwards compatible in the future is not entirely clear.\nTo tackle both challenges simultaneously, the rix package offers an integrated solution, combining system requirements management with package version control to streamline reproducibility efforts.\n\nAdvantages\n\nData analysis is sustainable over longer period of time\nEqual system environment between researchers\nEqual package versions between researchers\n\n\n\nFirst easy steps\nI recommend starting with ensuring the compatibility of package versions.\n\nIf you want your workflows and particularly those of others to be altered the least, groundhog may be the better option (only minimal alterations with both)\nIn case you are using packages installed from github, renv may be the even more robust option (both are relatively robust)\n\nOnce you are confident in managing packages, you can proceed to address system requirements, such as standardizing software versions. See “Free resources” for holepunch and rix below.\n\n\n\n\n\n\nPackage management with renv (for R)\n\n\n\n\n\n\n\n\nYou\n\nOnly once:\nInstall renv by running\n\n\ninstall.packages(\"renv\")\n\n\nOnce per project:\nMake sure you work within an R-project (and not with single files)!\nInitiate renv by running\n\n\nrenv::init()\n\n\nOnly in case you installed new packages:\nDocument these new packages by running\n\n\nrenv::snapshot()\n\n\nNow share your project with others (e.g. via Zenodo, GitHub, email)\n\n\n\n\n\n\nOthers\n\nInstall renv by running\n\n\ninstall.packages(\"renv\")\n\n\nOpen the project they received from you\nTo have the same package versions available, others need to run\n\n\nrenv::restore()\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage management with groundhog (for R)\n\n\n\n\n\n\nOnly once:\nInstall groundhog by running\n\n\ninstall.packages(\"groundhog\")\n\n\nWhen starting RStudio:\nLoad groundhog package by running\n\n\nlibrary(groundhog)\n\n\nWhen writing a script:\n\n\n\nYou can replace this\n\nlibrary(rio)\nlibrary(dplyr)\n\n\n\n\nwith this using e.g. today’s date\n\ngroundhog.library(\"\n  library(rio)\n  library(dplyr)   \", \"2025-01-28\")\n\n\n\nIn contrast to renv, others do not need to know anything about groundhog. They can run your script, that will automatically install and load the specific packages.\n\n\n\n\n\nFree Resources\nTutorial: renv Tutorial: groundhog Tutorial: Holepunch Tutorial: rix\n\nFoto by Marten Bjork on Unsplash",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Containerization and version management</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "5  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Containerization and version management</span>"
     ]
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Input-output-documents (“Notebooks”) – Computational Reproducibility</title>
+<title>2&nbsp; Input-output-documents (“Notebooks”) – Computational Reproducibility</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./42_solutions_inputoutput.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./42_solutions_inputoutput.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -110,43 +110,25 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">General</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./41_solutions_fileformat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Open file formats and software</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Open file formats and software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./42_solutions_inputoutput.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./43_solutions_version.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Containerization and version management</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Containerization and version management</span></span></a>
   </div>
 </li>
     </ul>
@@ -160,6 +142,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#advantages" id="toc-advantages" class="nav-link active" data-scroll-target="#advantages">Advantages</a></li>
+  <li><a href="#first-easy-steps" id="toc-first-easy-steps" class="nav-link" data-scroll-target="#first-easy-steps">First easy steps</a></li>
   <li><a href="#free-resources" id="toc-free-resources" class="nav-link" data-scroll-target="#free-resources">Free Resources</a></li>
   </ul>
 </nav>
@@ -169,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></h1>
 </div>
 
 
@@ -196,8 +179,113 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Provides provenance of results: Directly links transparent inputs to outputs</li>
 <li>Ensures error-free output: HTML/PDF documents are only rendered if all code, from data import to variable manipulation and analysis, runs without errors</li>
-<li>Enhances understandability: Enables detailed explanations of analytical approaches and result interpretations</li>
+<li>Enhances understandability for others and your future self: Enables detailed explanations of analytical approaches and result interpretations</li>
 </ul>
+</section>
+<section id="first-easy-steps" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="first-easy-steps">First easy steps</h3>
+<p>Creating input-output documents requires only <strong>minimal adjustments</strong> to your existing workflow.</p>
+<p>The additional information text you might include to make your data analyses more transparent can vary across projects. However, it can be helpful to communicate the following:</p>
+<ul>
+<li><strong>Rationale for Decisions</strong><br>Share the reasoning behind key methodological choices, such as removing outliers, selecting the number of imputed datasets when addressing missing data, or computing specific contrasts. These explanations can make your analysis easier to follow.</li>
+<li><strong>Connection to Manuscript Sections</strong><br>Organize your documentation in a way that aligns with the structure of your manuscript. For example, headings like “Treatment Check” or “Hypothesis 1a” can improve readability and help readers navigate the document more efficiently.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="With JASP">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+With JASP
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="www/jasp_title.jpg" class="top-img zoom-big img-fluid"></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:66%;">
+<p>Edit headings and the title by clicking on the down arrow.<br>
+<em>Mouse over image to zoom</em></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="www/jasp_note.jpg" class="top-img zoom-big img-fluid"></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:66%;">
+<p>Add notes to any heading or table by clicking on the down arrow.<br>
+<em>Mouse over image to zoom</em></p>
+</div>
+</div>
+<p><br>
+</p>
+<p>After you computed you analyses, edited titles and added notes: <strong>Share the .jasp-file</strong> (e.g., on <a href="https://zenodo.org/">zenodo</a>, as supplement to your manuscript or via email).</p>
+<p>This file will <strong>contain everything</strong> from data and analyses to titles and notes in your output!</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="With jamovi">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+With jamovi
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="www/jamovi_edit.jpg" class="top-img zoom-big img-fluid"></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:66%;">
+<p>Click on the <strong>edit tab</strong> in the menu on the top, to edit all parts of the output (except results themselves). Change titles to fit the sections of your manuscript and provide further information below titles or around tables and figures.<br>
+<em>Mouse over image to zoom</em></p>
+</div>
+</div>
+<p><br>
+</p>
+<p>After you computed you analyses, edited titles and added notes: <strong>Share the .omv-file</strong> (e.g., on <a href="https://zenodo.org/">zenodo</a>, as supplement to your manuscript or via email).</p>
+<p>This file will <strong>contain everything</strong> from data and analyses to titles and notes in your output!</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="With R or python">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+With R or python
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img src="www/quarto_intro.png" class="top-img zoom-big img-fluid"><br>
+<em>Mouse over image to zoom: Quarto visual editor (left) and rendered HTML (right)</em></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:66%;">
+<p><a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto</a> is a file format that allows you to provide all your code (from importing to wrangling, transforming and analyzing data) along with (but not limited to) additional text and images.</p>
+<p>The advantage of Quarto over RMarkdown is that it works simultaneously with R, Python, Javascript and Julia. It is also <strong>pre-installed in RStudio</strong>: Go to <em>File</em> &gt; <em>New File</em> &gt; <em>Quarto Document</em>.</p>
+<p>Quarto has a <strong>visual editor</strong> that works like familiar word processing programs, such as Google Docs or Microsoft Word. In Quarto, you can add special sections called “code chunks” (shown as grey boxes in the picture). These chunks are where you can write or paste R or Python code. If you already have your code in another file, you can just <strong>copy and paste</strong> it into these chunks. You can also add headings and extra text anywhere in the document to explain your code or organize your work.</p>
+<p>Finally, <strong>render the entire document</strong> to HTML, PDF or Word by clicking the “render” button.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="free-resources" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="free-resources">Free Resources</h3>
@@ -631,12 +719,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./41_solutions_fileformat.html" class="pagination-link" aria-label="Open file formats and software">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Open file formats and software</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Open file formats and software</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./43_solutions_version.html" class="pagination-link" aria-label="Containerization and version management">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Containerization and version management</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Containerization and version management</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

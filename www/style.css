@@ -15,6 +15,20 @@
     color: #fff;
 }
 
+.btn-index {
+  width: 33%;
+}
+
+.sameheight {
+  /*height: 140px;*/
+}
+
+mark {
+  background-color: #fff;
+}
+
+
+
 .top-img {
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -46,4 +60,8 @@
   transform-origin:top left;
   z-index: 999;
   position: relative;
+}
+
+.smallfont {
+  font-size: 0.7em !important;
 }
