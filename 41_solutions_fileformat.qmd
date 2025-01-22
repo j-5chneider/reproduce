@@ -1,6 +1,5 @@
 # Open file formats and software
-![](www/software1.png)
-
+![](www/software2.jpg){.top-img}  
 \
 
 Reproducibility in research relies on sharing both the steps used to analyze data and the data itself. Using open file formats and free, **open-source software** helps make these resources available to everyone. With software such as R and Python, researchers can document their data analysis procedures (in so-called scripts) that others can reuse or adapt.

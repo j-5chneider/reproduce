@@ -6,14 +6,15 @@ execute:
   message: false
 ---
 
-
 # Containerization and version management
+![](www/version.jpg){.top-img}  
+\
 
-R and Python use additional extensions ("packages") to expand their basic functions for data analysis. However, differences in the **versions** of these packages can create compatibility issues, even when researchers are using the same system. Packages like renv and groundhog for R help address this by maintaining consistent versions, ensuring that analyses remain accessible and reliable over time.
+R and python use additional extensions ("packages") to expand their basic functions for data analysis. However, differences in the **versions** of these packages can create compatibility issues, even when researchers are using the same version of R of python. Packages like `renv` and `groundhog` for R help to keep these versions consistent.
   
-Beyond package management, maintaining compatibility across **system requirements**—such as operating systems and software versions—is critical for ensuring portability. Containerization tools like Docker and the Holepunch package for R provide solutions by encapsulating scripts and their dependencies into isolated environments. This approach preserves the original system configuration, enabling reproducibility of analysis scripts across different platforms. To what extent JASP and jamovi will be backwards compatible in the future is not entirely clear.
+Beyond package management, maintaining compatibility across **system requirements** — such as operating systems and software versions — is critical for ensuring portability. Containerization tools like Docker and the `holepunch` package for R provide solutions by encapsulating scripts and their dependencies into isolated environments. To what extent JASP and jamovi will be backwards compatible in the future is not entirely clear.
   
-To tackle **both challenges** simultaneously, the rix package offers an integrated solution, combining system requirements management with package version control to streamline reproducibility efforts.
+To tackle **both challenges** simultaneously, the `rix` package offers an integrated solution, combining system requirements management with package version control to streamline reproducibility efforts.
 
 ### Advantages {.unnumbered}
 
@@ -25,9 +26,12 @@ To tackle **both challenges** simultaneously, the rix package offers an integrat
 
 ### First easy steps {.unnumbered}
 
-The management of packages and software versions is particularly relevant **for R and Python**, as **users have the ability** to ensure compatibility themselves. In contrast, whether older JASP or Jamovi project files can be opened in newer software versions depends largely on the decisions of the software developers, leaving users with limited control.  
+I recommend **starting with** ensuring the compatibility of **package versions**.
 
-I recommend **starting with** ensuring the compatibility of **package versions**. Once you are confident in managing this, you can proceed to address system requirements, such as standardizing software versions.
+* If you want your workflows and particularly those of others to be altered the least, `groundhog` may be the better option (only minimal alterations with both)
+* In case you are using packages installed from github, `renv` may be the even more robust option (both are relatively robust)
+
+Once you are confident in managing packages, you can proceed to address system requirements, such as standardizing software versions. See "Free resources" for `holepunch` and `rix` below.
 
 ::: {.callout-tip collapse="true" title="Package management with renv (for R)"}
 ::::{.columns}
@@ -78,9 +82,6 @@ renv::restore()
 
 
 ::: {.callout-tip collapse="true" title="Package management with groundhog (for R)"}
-::::{.columns}
-:::{.column width="49%"}
-#### You {.unnumbered}
 1. **Only once:**  
 Install `groundhog` by running
 ```{r}
@@ -93,29 +94,30 @@ Load `groundhog` package by running
 library(groundhog)
 ```
 
-3. **Only in case you installed new packages:**  
-Document these new packages by running
-```{r}
-groundhog.library(pkgs, "2023-09-01")
-```
+3. **When writing a script:**  
 
-4. **Now share your project with others** (e.g. via [Zenodo](https://zenodo.org/), [GitHub](https://github.com/), email)
+::::{.columns}
+:::{.column width="49%"}
+You can replace this
+```{r}
+library(rio)
+library(dplyr)
+```
 :::
 :::{.column width="2%"}
 :::
 :::{.column width="49%"}
-#### Others {.unnumbered}
-1. Install `renv` by running
+with this using e.g. today's date
 ```{r}
-install.packages("renv")
-```
-2. Open the project they received from you
-3. To have the same package versions available, others need to run
-```{r}
-renv::restore()
+groundhog.library("
+  library(rio)
+  library(dplyr)   ", "2025-01-28")
 ```
 :::
 ::::
+
+In contrast to `renv `, **others do not need to know anything** about `groundhog`. They can run your script, that will automatically install and load the specific packages.
+
 :::
 
 
@@ -123,9 +125,13 @@ renv::restore()
 ### Free Resources {.unnumbered}
 
 
-<a href="https://karthik.github.io/holepunch/" target="_blank" class="infobtn">![](www/holepunch_logo.png){width="110"}<br /><b>Tutorial: Holepunch</b><br></a>
-<a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank" class="infobtn">![](www/renv_logo.png){width="100"}<br /><b>Tutorial: renv</b><br></a>
-<a href="https://groundhogr.com/" target="_blank" class="infobtn">![](www/groundhog_logo.png){width="110"}<br /><b>Tutorial: groundhog</b><br></a>  
-  
-<a href="https://ropensci.github.io/rix/" target="_blank" class="infobtn">![](www/rix_logo.png){width="100"}<br /><b>Tutorial: rix</b><br></a>
-<a href="https://www.youtube.com/watch?v=tM4JrCWZpwA" target="_blank" class="infobtn">![](www/rix_logo.png){width="100"}<br /><b>video tutorial: rix</b><br>(youtube: useR! Conference)</a>
+
+<a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank" class="infobtn sameheight">![](www/renv_logo.png){width="100"}<br /><b>Tutorial: renv</b><br></a>
+<a href="https://groundhogr.com/" target="_blank" class="infobtn sameheight"><br />![](www/groundhog_logo.png){width="91"}<br /><br /><b>Tutorial: groundhog</b><br></a>
+<a href="https://karthik.github.io/holepunch/" target="_blank" class="infobtn sameheight"><br />![](www/holepunch_logo.png){width="108"}<br /><b>Tutorial: Holepunch</b><br></a>
+<a href="https://docs.ropensci.org/rix/articles/a-getting-started.html#rix-workflow" target="_blank" class="infobtn sameheight">![](www/rix_logo.png){width="100"}<br /><b>Tutorial: rix</b><br></a>
+
+
+:::{.smallfont}
+Foto by <a href="https://unsplash.com/de/@martenbjork?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Marten Bjork</a> on <a href="https://unsplash.com/de/fotos/person-die-auf-silbernem-laptop-tippt-ANGrwTKxjlk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
+:::

@@ -4,13 +4,12 @@ project:
 book:
   title: "Computational Reproducibility"
   author: "Jürgen Schneider"
-  date: "18.12.2024"
+  date: "2025-01-22"
   chapters:
     - index.qmd
     - 41_solutions_fileformat.qmd
     - 42_solutions_inputoutput.qmd
     - 43_solutions_version.qmd
-    - references.qmd
 
 bibliography: references.bib
 

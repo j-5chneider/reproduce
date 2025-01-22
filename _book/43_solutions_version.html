@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Containerization and version management – Computational Reproducibility</title>
+<title>3&nbsp; Containerization and version management – Computational Reproducibility</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
 <link href="./42_solutions_inputoutput.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./43_solutions_version.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Containerization and version management</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./43_solutions_version.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Containerization and version management</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -110,43 +143,25 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">General</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./41_solutions_fileformat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Open file formats and software</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Open file formats and software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./42_solutions_inputoutput.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./43_solutions_version.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Containerization and version management</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Containerization and version management</span></span></a>
   </div>
 </li>
     </ul>
@@ -160,7 +175,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#advantages" id="toc-advantages" class="nav-link active" data-scroll-target="#advantages">Advantages</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#first-easy-steps" id="toc-first-easy-steps" class="nav-link" data-scroll-target="#first-easy-steps">First easy steps</a></li>
+  <li><a href="#free-resources" id="toc-free-resources" class="nav-link" data-scroll-target="#free-resources">Free Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -169,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Containerization and version management</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Containerization and version management</span></h1>
 </div>
 
 
@@ -186,9 +202,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>R and Python use additional extensions (“packages”) to expand their basic functions for data analysis. However, differences in the <strong>versions</strong> of these packages can create compatibility issues, even when researchers are using the same system. Packages like renv and groundhog for R help address this by maintaining consistent versions, ensuring that analyses remain accessible and reliable over time.</p>
-<p>Beyond package management, maintaining compatibility across <strong>system requirements</strong>—such as operating systems and software versions—is critical for ensuring portability. Containerization tools like Docker and the Holepunch package for R provide solutions by encapsulating scripts and their dependencies into isolated environments. This approach preserves the original system configuration, enabling reproducibility of analysis scripts across different platforms. To what extent JASP and jamovi will be backwards compatible in the future is not entirely clear.</p>
-<p>To tackle <strong>both challenges</strong> simultaneously, the rix package offers an integrated solution, combining system requirements management with package version control to streamline reproducibility efforts.</p>
+<p><img src="www/version.jpg" class="top-img img-fluid"><br>
+<br>
+</p>
+<p>R and python use additional extensions (“packages”) to expand their basic functions for data analysis. However, differences in the <strong>versions</strong> of these packages can create compatibility issues, even when researchers are using the same version of R of python. Packages like <code>renv</code> and <code>groundhog</code> for R help to keep these versions consistent.</p>
+<p>Beyond package management, maintaining compatibility across <strong>system requirements</strong> — such as operating systems and software versions — is critical for ensuring portability. Containerization tools like Docker and the <code>holepunch</code> package for R provide solutions by encapsulating scripts and their dependencies into isolated environments. To what extent JASP and jamovi will be backwards compatible in the future is not entirely clear.</p>
+<p>To tackle <strong>both challenges</strong> simultaneously, the <code>rix</code> package offers an integrated solution, combining system requirements management with package version control to streamline reproducibility efforts.</p>
 <section id="advantages" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="advantages">Advantages</h3>
 <ul>
@@ -197,10 +216,138 @@ ul.task-list li input[type="checkbox"] {
 <li>Equal package versions between researchers</li>
 </ul>
 </section>
-<section id="resources" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="resources">Resources</h3>
-<p><a href="https://karthik.github.io/holepunch/" target="_blank" class="infobtn"><img src="www/holepunch_logo.png" class="img-fluid" width="110"><br><b>Tutorial: Holepunch</b><br></a> <a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank" class="infobtn"><img src="www/renv_logo.png" class="img-fluid" width="100"><br><b>Tutorial: renv</b><br></a> <a href="https://groundhogr.com/" target="_blank" class="infobtn"><img src="www/groundhog_logo.png" class="img-fluid" width="110"><br><b>Tutorial: groundhog</b><br></a></p>
-<p><a href="https://ropensci.github.io/rix/" target="_blank" class="infobtn"><img src="www/rix_logo.png" class="img-fluid" width="100"><br><b>Tutorial: rix</b><br></a> <a href="https://www.youtube.com/watch?v=tM4JrCWZpwA" target="_blank" class="infobtn"><img src="www/rix_logo.png" class="img-fluid" width="100"><br><b>video tutorial: rix</b><br>(youtube: useR! Conference)</a></p>
+<section id="first-easy-steps" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="first-easy-steps">First easy steps</h3>
+<p>I recommend <strong>starting with</strong> ensuring the compatibility of <strong>package versions</strong>.</p>
+<ul>
+<li>If you want your workflows and particularly those of others to be altered the least, <code>groundhog</code> may be the better option (only minimal alterations with both)</li>
+<li>In case you are using packages installed from github, <code>renv</code> may be the even more robust option (both are relatively robust)</li>
+</ul>
+<p>Once you are confident in managing packages, you can proceed to address system requirements, such as standardizing software versions. See “Free resources” for <code>holepunch</code> and <code>rix</code> below.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Package management with renv (for R)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Package management with renv (for R)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:49%;">
+<section id="you" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="you">You</h4>
+<ol type="1">
+<li><strong>Only once:</strong><br>
+Install <code>renv</code> by running</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><strong>Once per project:</strong><br>
+Make sure you work within an R-project (and not with single files)!<br>
+Initiate <code>renv</code> by running</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li><strong>Only in case you installed new packages:</strong><br>
+Document these new packages by running</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li><strong>Now share your project with others</strong> (e.g.&nbsp;via <a href="https://zenodo.org/">Zenodo</a>, <a href="https://github.com/">GitHub</a>, email)</li>
+</ol>
+</section>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:49%;">
+<section id="others" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="others">Others</h4>
+<ol type="1">
+<li>Install <code>renv</code> by running</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Open the project they received from you</li>
+<li>To have the same package versions available, others need to run</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Package management with groundhog (for R)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Package management with groundhog (for R)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Only once:</strong><br>
+Install <code>groundhog</code> by running</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"groundhog"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><strong>When starting RStudio:</strong><br>
+Load <code>groundhog</code> package by running</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(groundhog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li><strong>When writing a script:</strong></li>
+</ol>
+<div class="columns">
+<div class="column" style="width:49%;">
+<p>You can replace this</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:49%;">
+<p>with this using e.g.&nbsp;today’s date</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">groundhog.library</span>(<span class="st">"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="st">  library(rio)</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="st">  library(dplyr)   "</span>, <span class="st">"2025-01-28"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>In contrast to <code>renv</code>, <strong>others do not need to know anything</strong> about <code>groundhog</code>. They can run your script, that will automatically install and load the specific packages.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="free-resources" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="free-resources">Free Resources</h3>
+<p><a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank" class="infobtn sameheight"><img src="www/renv_logo.png" class="img-fluid" width="100"><br><b>Tutorial: renv</b><br></a> <a href="https://groundhogr.com/" target="_blank" class="infobtn sameheight"><br><img src="www/groundhog_logo.png" class="img-fluid" width="91"><br><br><b>Tutorial: groundhog</b><br></a> <a href="https://karthik.github.io/holepunch/" target="_blank" class="infobtn sameheight"><br><img src="www/holepunch_logo.png" class="img-fluid" width="108"><br><b>Tutorial: Holepunch</b><br></a> <a href="https://docs.ropensci.org/rix/articles/a-getting-started.html#rix-workflow" target="_blank" class="infobtn sameheight"><img src="www/rix_logo.png" class="img-fluid" width="100"><br><b>Tutorial: rix</b><br></a></p>
+<div class="smallfont">
+<p>Foto by <a href="https://unsplash.com/de/@martenbjork?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash" target="_blank">Marten Bjork</a> on <a href="https://unsplash.com/de/fotos/person-die-auf-silbernem-laptop-tippt-ANGrwTKxjlk?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash" target="_blank">Unsplash</a></p>
+</div>
 
 
 </section>
@@ -629,13 +776,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./42_solutions_inputoutput.html" class="pagination-link" aria-label="Input-output-documents (&quot;Notebooks&quot;)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Input-output-documents (“Notebooks”)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
