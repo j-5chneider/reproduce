@@ -585,6 +585,7 @@ generate_badge() # Generates a badge you can add to your README. Clicking badge 
 * Daten und Analysen teilen
 * In "Projekten" arbeiten, relative Pfade nutzen
 * Klare Ordnerstruktur und Readme-Dateien nutzen
+
 :::
 
 
@@ -679,10 +680,17 @@ Projektordner (E-Mail, github, OSF, zenodo)
 
 
 
+:::{focus-on="cr-oer"}
 
+# OER
+:::
 
+:::{#cr-oer}
 
+[t1p.de/GEBF25-repro](https://t1p.de/GEBF25-repro){.bigger-font .fig-story70}
 
+![](www/oer.jpg){.border-round .fig-story70}
+:::
 
 
 
