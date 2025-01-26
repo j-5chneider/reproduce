@@ -35,7 +35,7 @@
 
 #title-block-header {
   min-height: 100vh;
-  
+  font-size: 1.5em !important;
 }
 
 
@@ -43,9 +43,14 @@
   border: 1px solid darkgrey;
 }
 
+.title {
+  font-size: 1.5em !important;
+}
+
 .quarto-title {
   margin-top: 25%;
   margin-bottom: 15%;
+  font-size: 1.5em !important;
 }
 
 .narrative-col h1, .narrative-col h2, .narrative-col a {

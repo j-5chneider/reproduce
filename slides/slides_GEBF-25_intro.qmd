@@ -5,14 +5,14 @@ title-slide-attributes:
   data-background-image: www/title-bg2.jpg
   data-background-size: cover
   #data-background-opacity: "0.3"
-author: "<br /><br /><b>Jürgen Schneider</b><br />*Huff & Bongartz*<br />*Koschmieder, Bilalovic, Herzog & Auferbauer*<br />*Krammer*"
+author: "<br /><br /><br />*Huff & Bongartz*<br />*Bilalovic, Koschmieder, Herzog & Auferbauer*<br />*Schneider*<br />*Krammer*"
 date: today # "20. Mar 2024"
 date-format: "DD MMMM YYYY"
 format: 
   revealjs:
       theme: [white] # sky default
       logo: www/dipf-logo.png
-      footer: "Slides: [link pending](#)"
+      footer: "Slides: [t1p.de/gebf25-os](https://t1p.de/gebf25-os)"
       smaller: true
       scrollable: true
       transition: fade
@@ -55,15 +55,15 @@ library(countdown)
 #### Entwicklungen
 
 * **Positionspapiere/Standards/Veranstaltungen**
-   - Forschungsförderer [@BMBF.2016, @DFG.2022b, @ERC.2022, @ERC.2023]
+   - Forschungsförderer [@BMBF.2016; @DFG.2022b; @ERC.2022; @ERC.2023]
    - Politik [@UNESCO.2022]
    - wiss. Gesellschaften [@DGfE.etal.2020, GEBF Open Science Summer]
 * **Infrastruktur**
    - Verbund Forschungsdaten Bildung
    - peDOCS
 * **Forschende**
-   - Zunahme offener Forschungspraktiken [@Cao.etal.2023, @UNESCO.2023]
-   - Gesteigerte Bedeutung und Nutzen [@Borycz.etal.2023]
+   - Zunahme offener Forschungspraktiken [@Cao.etal.2023; @UNESCO.2023]
+   - Gesteigerte Aufmerksamkeit, Bedeutung und Nutzen [@Borycz.etal.2023; @Krammer.Svecnik.2020]
 
 :::
 
@@ -75,7 +75,7 @@ library(countdown)
 #### Noch ungenutztes Potential
 
 * Transparenz bzgl. **Forschungsdaten** [@Huff.Bongartz.2023]<br /><br />
-* **Reproduzierbarkeit** von Analysen [@Artner.etal.2021, @Hardwicke.etal.2022]<br /><br />
+* **Reproduzierbarkeit** von Analysen [@Artner.etal.2021; @Hardwicke.etal.2022]<br /><br />
 * Angebot & Häufigkeit von **Registered Reports** 
 
 :::
@@ -152,6 +152,28 @@ Welche **Voraussetzungen** benötigen Sie für offene Forschungspraktiken?
 wird für die einzelnen Beiträge genutzt (Rückfragen) und die Diskussion am Ende
 :::
 
+
+## Die Beiträge
+
+\
+
+#### "Geringe Verfügbarkeit von Forschungsdaten in pädagogisch-psychologischen Journals: Keine Hinweise auf wirksame Forschungsdaten-Policies"
+*Markus Huff & Elke C. Bongartz*
+
+\
+
+#### "Open Data in Large-Scale Assessments: Chancen und Herausforderungen am Beispiel von TALIS"
+*Marie Bilalovic, Corinna Koschmieder, Manfred Herzog & Martin Auferbauer *
+
+\
+
+#### "Einfache Möglichkeiten die Reproduzierbarkeit der eigenen Analysen zu steigern"
+*Jürgen Schneider*
+
+\
+
+#### "Peer-Review-Prozesse anders gedacht: Registered Reports als Formate in der Qualifikationsphase und darüber hinaus"
+*Georg Krammer*
 
 
 
