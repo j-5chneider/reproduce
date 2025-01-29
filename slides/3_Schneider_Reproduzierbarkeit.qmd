@@ -1,0 +1,642 @@
+---
+title: Einfache Möglichkeiten 
+subtitle: die Reproduzierbarkeit der eigenen Analysen zu steigern
+date: today
+author:
+  - name: Jürgen Schneider
+    orcid: 0000-0002-3772-4198
+    email: ju.schneider@dipf.de
+    affiliation: 
+      - name: <img src="www/dipf-logo.png" width="40%" />
+        url: https://www.dipf.de/en/institute/staff/schneider-juergen?set_language=en
+license: "CC BY SA"
+logo: www/dipf-logo.png
+format:
+  closeread-html:
+    cr-style:
+      narrative-background-color-sidebar: "#044040"
+      narrative-text-color-sidebar: "#F2F2F2"
+      section-background-color: "#F2F2F2" 
+      section-outer-margin: 250px
+      # narrative-background-color-overlay: "#044040"
+      # narrative-text-color-overlay: "#F2F2F2"
+      poem-font-family: Nunito Sans
+    embed-resources: true # will make standalone html file
+theme: lux
+css: www/style.css
+bibliography: www/references.bib
+---
+
+```{r}
+library(ggplot2)
+library(fontawesome)
+# library(icons)
+```
+
+
+:::{.cr-section}
+
+:::{focus-on="cr-def"}
+# Computative Reproduzierbarkeit
+## Definition
+:::
+
+:::{#cr-def}
+
+| **Unabhängige** Forschende, die 
+| **dieselben** Daten und Analyseverfahren verwenden, 
+| gelangen zu **identischen** Resultaten
+
+\
+
+"In principle, all reported evidence should be reproducible" [@Nosek.etal.2022, S. 721]
+:::
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-artner"}
+# Computative Reproduzierbarkeit
+## ist nicht selbstverständlich
+:::
+
+:::{#cr-artner}
+
+**@Artner.etal.2021**: **232** scientific claims aus **46** Zeitschriftenartikel  
+
+\
+
+
+```{r}
+#| fig-width: 12
+#| fig-height: 7
+#| fig-align: center
+#| fig-dpi: 300
+#| out-width: "80%"
+
+artner <- data.frame(what = factor(c("scientific claims",
+                                     "reproducible",
+                                     "reproducible (strict)",
+                                     "reproducible (strict) \n& procedure of paper"),
+                                   levels = c("scientific claims",
+                                     "reproducible",
+                                     "reproducible (strict)",
+                                     "reproducible (strict) \n& procedure of paper")),
+                     count = c(232, 163, 137, 119),
+                     percent = c("100 %", "70 %", "59 %", "51 %"))
+
+ggplot(artner, aes(x=what, y=count)) +
+  stat_summary(fun=mean, colour="#ff4c4c", geom="line", aes(group = 1), linewidth = 3) +
+  geom_point(size = 6) +
+  annotate("text", x = artner$what, y = artner$count - 15, label = artner$percent, size = 6) +
+  scale_y_continuous(limits = c(0,235)) +
+  xlab("") +
+  ylab("count: scientific claims") +
+  theme_light() +
+  theme(text = element_text(size = 24),
+        plot.background = element_rect(fill = "transparent",
+                                 color = NA_character_),
+        panel.background = element_rect(fill = "transparent",
+                                  color = NA_character_))
+```
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-story1" scale-by="1" pan-to="0%,0%"}
+# Computative Reproduzierbarkeit
+## im Forschungsalltag
+:::
+
+:::{#cr-story1}
+
+![](www/fig1_1a.png){.fig-story70}
+:::
+
+
+
+
+
+:::{focus-on="cr-story2"}
+# Computative Reproduzierbarkeit
+## Voraussetzungen
+:::
+
+
+
+
+:::{focus-on="cr-story2" scale-by="2" pan-to="40%,80%"}
+## Kompatibel mit der Softwareversion der Kolleg:innen?
+:::
+
+:::{#cr-story2}
+
+![](www/fig1_2a.png){.fig-story70}
+:::
+
+
+:::{focus-on="cr-story2" scale-by="2" pan-to="40%,30%"}
+## Software potenziell kostenfrei installierbar?
+:::
+
+
+:::{focus-on="cr-story2" scale-by="2" pan-to="40%,-25%"}
+## Welche Rechnungen entsprechen welchen Hypothesen im Manuskript?
+## Logik des Umgangs mit Ausreißern?
+:::
+
+:::{focus-on="cr-story2" scale-by="2" pan-to="40%,-75%"}
+## Version der Paket-Erweiterungen eindeutig?
+:::
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-pillars"}
+# Computative Reproduzierbarkeit
+## Möglichkeiten
+:::
+
+:::{#cr-pillars}
+
+![](www/fig1_3.png){.fig-story70}
+
+[@Ziemann.etal.2023]
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-software1"}
+# &#10112; {.bigger-font}
+# Kostenfreie Software
+## R, JASP, JAMOVI, Python, PSPP, ...
+:::
+
+:::{#cr-software1}
+
+![](www/software1.png)
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-software2"}
+# Niederschwelliger Übergang von SPSS
+:::
+
+:::{focus-on="cr-software2" scale-by="2" pan-to="50%, 0"}
+# JAMOVI
+:::
+
+:::{focus-on="cr-software2" scale-by="2" pan-to="-50%, 0"}
+# JASP
+:::
+
+:::{#cr-software2}
+
+::::{.columns}
+
+:::{.column width="48%"}
+![](www/jamovi_regression.jpg)
+:::
+
+:::{.column width="2%"}
+:::
+
+:::{.column width="48%"}
+![](www/jasp_regression.jpg)
+:::
+::::
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-literate"}
+# &#10113; {.bigger-font}
+# Literate programming
+## Verbindet Input, Output und ergänzenden Text in einer Datei
+Hier klicken für [ein Beispiel](https://raw.githack.com/j-5chneider/uzvvtp-las/refs/heads/master/5_validation/validation.html).
+:::
+
+:::{focus-on="cr-literate" scale-by="1.4" pan-to="30%,0"}
+# Quarto Markdown,
+# RMarkdown,
+# jupyter Notebooks
+:::
+
+
+:::{focus-on="cr-literate" scale-by="1.4" pan-to="-30%,0"}
+# Kompiliert als
+# HTML, PDF, Word, ...
+:::
+
+
+:::{#cr-literate}
+
+![](www/input_output.jpg){.fig-story95}
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-literate2"}
+
+# "Add Notes" & "Edit Title"
+## in JASP und jamovi
+
+:::
+
+:::{focus-on="cr-literate2" scale-by="2" pan-to="50%, 0"}
+:::
+
+:::{focus-on="cr-literate2" scale-by="2" pan-to="-50%, 0"}
+:::
+
+
+:::{#cr-literate2}
+::::{.columns}
+
+:::{.column width="48%"}
+![](www/jasp_note1.jpg){.border1}
+:::
+
+:::{.column width="2%"}
+:::
+
+:::{.column width="48%"}
+![](www/jasp_note2.jpg){.border1}
+:::
+::::
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen1"}
+# &#10114; {.bigger-font}
+# Kontrolle der
+## Paket- und Softwareversion
+:::
+
+
+:::{#cr-versionen1}
+
+![](www/paket-software.png){.fig-story95}  
+
+`r fa("long-arrow-right")` Problemlos integrierbar in Ihren bestehenden, **gewohnten Workflow**!
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen2"}
+![](www/renv_logo.png)   
+
+## Paketmanagement in R
+:::
+
+
+:::{#cr-versionen2}
+
+## Nutzer:in 1
+```{r}
+#| eval: false
+#| echo: true
+
+renv::init()     # 1x zu Beginn des R-Projekts
+
+renv::snapshot() # Dokumentation der genutzten Pakete 
+                 # (nur nötig nach Installation neuer Pakete)
+```
+
+## Nutzer:in 2
+```{r}
+#| eval: false
+#| echo: true
+
+renv::restore()  # um die Paketversionen von Nutzer:in 1 herzustellen
+```
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen3"}
+![](www/renv_logo.png)
+:::
+
+
+:::{#cr-versionen3}
+`renv::init()` generiert u.a. ...
+
+* einen **Projekt-spezifischen** Ordner für genutzte Pakete
+* eine Datei, in der **Informationen über die Pakete** dokumentiert werden (z. B. Version)
+
+![](www/renv_init.png)
+:::
+
+
+:::{focus-on="cr-versionen3a"}
+![](www/renv_logo.png)   
+:::
+
+
+:::{#cr-versionen3a}
+
+`renv::init()` ist Äquivalent zu:  
+  
+![](www/renv_create.jpg)
+:::
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-versionen4"}
+![](www/renv_logo.png)   
+:::
+
+
+:::{#cr-versionen4}
+**Wie üblich**
+
+* Pakete installieren
+* R-Code (Ihre Datenanalyse) schreiben
+
+**Dann** `renv::snapshot()` ausführen, um z. B.
+
+* genutzte Pakete
+* deren Version
+* deren Abhängigkeiten **automatisch festzuhalten**
+
+![](www/renv_snapshot.jpg){width=80%}
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-discussion1"}
+
+# Wo und wie anfangen?
+:::
+
+
+:::{#cr-discussion1 width="100%"}
+
+### Generell
+
+* Daten und Analysen teilen
+* In "Projekten" arbeiten, relative Pfade nutzen
+* Klare Ordnerstruktur und Readme-Dateien nutzen
+
+[@Batinovic.Carlsson.2023]
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+:::{focus-on="cr-discussion2"}
+
+# Wo und wie anfangen?
+:::
+
+
+
+:::{#cr-discussion2 width="100%"}
+::::{.columns}
+:::{.column .firstcol}
+
+### Software
+:::
+:::{.column .secondcol}
+
+### Literate Programming
+:::
+:::{.column .thirdcol}
+
+### Paket- & Softwareversion
+:::
+:::{.column .fourthcol}
+
+### Wie teilen?
+:::
+::::
+
+
+::::{.columns}
+:::{.column .firstcol .addborder}
+![](www/jamovi_logo.png){width="40%"}![](www/jasp_logo.png){width="40%"}
+:::
+:::{.column .secondcol .addborder}
+
+Kommentierung des Outputs ("Add Note", "Edit Title")
+:::
+:::{.column .thirdcol .addborder}
+keine
+:::
+:::{.column .fourthcol .addborder}
+.jasp bzw. .omv Datei (E-Mail, github, Supplement)
+:::
+::::
+
+
+::::{.columns}
+:::{.column .firstcol .addborder}
+![](www/rstudio_icon.png){width="40%"}
+:::
+:::{.column .secondcol .addborder}
+![](www/quarto_logo.png){width="20%"}![](www/rmarkdown_logo.png){width="20%"}  
+Input-Output-Dokument via Quarto oder RMarkdown
+:::
+:::{.column .thirdcol .addborder}
+keine
+:::
+:::{.column .fourthcol .addborder}
+Input-Output-Dokument als HTML oder PDF (E-Mail, github, Supplement)
+:::
+::::
+
+
+::::{.columns}
+:::{.column .firstcol .addborder}
+![](www/rstudio_icon.png){width="40%"}
+:::
+:::{.column .secondcol .addborder}
+keine
+:::
+:::{.column .thirdcol .addborder}
+![](www/renv_logo.png){width=20%}![](www/groundhog_logo.png){width=30%}  
+Versionskontrolle via renv/ groundhog
+:::
+:::{.column .fourthcol .addborder}
+Projektordner (E-Mail, github, OSF, zenodo)
+:::
+::::
+
+:::
+
+
+
+:::{focus-on="cr-oer"}
+
+# OER
+:::
+
+:::{#cr-oer}
+
+[t1p.de/GEBF25-repro](https://t1p.de/GEBF25-repro){.bigger-font .fig-story70}
+
+![](www/oer.jpg){.border-round .fig-story70}
+:::
+
+
+
+
+
+
+@cr-last
+
+:::{#cr-last}
+
+# Vielen Dank!
+\
+
+## **Jürgen Schneider**
+![](www/dipf-logo.png)
+  
+<ju.schneider@dipf.de>
+
+:::
+
+:::
+
