@@ -1,0 +1,173 @@
+
+
+.border-round {
+  border-radius: 7px;
+  border: 1px lightgrey solid;
+}
+
+.border1{
+  border: 1px solid darkgrey;
+}
+
+
+.bigger-font {
+  font-size: 1.5em !important;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+
+/* SECTION SLIDES */
+.section-title {
+  font-size: 1.2em !important;
+  text-align: center;
+  padding-top: 15%
+}
+
+.dark-slide {
+  background-color: #3C4151 !important;
+}
+
+.dark-slide h2,
+.dark-slide p,
+.dark-slide li {
+  color: white !important;
+}
+
+
+
+/* footer logo */
+slides > slide:not(.nobackground):before {
+  width: 0px;
+  height: 0px;
+  background-size: 0px 0px;
+}
+
+
+/* footer link to slides */
+.myfooter {
+  height: 0px;
+  position: absolute;
+  bottom: 5%;
+  width: 85%;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.grey-bg {
+  background-color: #f6f6f6;
+  border: 2px lightgrey solid;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+
+/* --------- LINKS --------- */
+a:link {
+    color: grey;
+    border-bottom: 1px solid grey;
+}
+
+a:visited {
+    color: grey;
+    border-bottom: 1px solid grey;
+}
+
+a:hover {
+    color: grey;
+    border-bottom: 1px solid grey;
+}
+
+a:active {
+    color: grey;
+    border-bottom: 1px solid grey;
+}
+
+
+
+
+/* --------- references on slides --------- */
+.citation {
+  /*float: right;*/
+  color: grey;
+  opacity: .6;
+  font-size: .7em;
+}
+
+.citation > a {
+  border-bottom: 0 !important;
+}
+
+
+/* ------------- highlighting ------------- */
+.highlight-bright {
+  position: relative;
+  display: inline;
+  z-index: 0;
+}
+
+.highlight-bright::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-color: #FFEE8C;
+  transform: translateY(20px); /* Nach unten verschieben */
+  z-index: -1;
+}
+
+.highlight-grey {
+  background-color: #f9f9f9;
+  border-radius: 7px;
+}
+
+.highlight-text {
+  color: #F29400;
+  font-weight: bold;
+}
+
+
+strong {
+  /*color: #79B530;*/
+  font-family: "Open Sans ExtraBold";
+  font-weight: 900;
+}
+
+
+
+/* ------------- boxes ------------- */
+.purpleBG {
+  background-color: #9D00FF30;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.yellowBG {
+  background-color: #FFEE8C90;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.greyBGmargin {
+  background-color: #efefef;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.darkgreyBGmargin {
+  background-color: #d0d0d0;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.border-top {
+  border-top: 1px solid #3f3f3f;
+  width: 100%;
+}

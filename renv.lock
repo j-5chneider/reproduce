@@ -527,7 +527,7 @@
     },
     "jsonlite": {
       "Package": "jsonlite",
-      "Version": "1.8.9",
+      "Version": "2.0.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -770,13 +770,8 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "1.0.11",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "utils"
-      ],
-      "Hash": "47623f66b4e80b3b0587bc5d7b309888"
+      "Version": "1.1.7",
+      "Source": "Repository"
     },
     "rio": {
       "Package": "rio",

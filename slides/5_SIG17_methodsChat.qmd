@@ -1,0 +1,766 @@
+---
+title: 'Low Hanging Fruits `r fontawesome::fa("lemon", height = "80px", prefer_type = "solid")`'
+subtitle: "to Increase the Reproducibility of Your Research"
+title-slide-attributes:
+  data-background-image: www/title-bg3.jpg
+  data-background-size: cover
+  #data-background-opacity: "0.3"
+author: "<br /><br /><br />**Jürgen Schneider**"
+date: today # "20. Mar 2024"
+date-format: "DD MMMM YYYY"
+format: 
+  revealjs:
+      theme: [white] # sky default
+      logo: www/PH_Logo.png
+      footer: "Slides: [t1p.de/gebf25-os](https://t1p.de/gebf25-os)"
+      smaller: true
+      scrollable: true
+      transition: fade
+      width: 1500
+      height: 850
+      hide-inactive-cursor: false
+      embed-resources: true
+editor: source
+editor_options: 
+  chunk_output_type: console
+bibliography: www/references.bib
+css: www/style_sig17.css
+csl: www/apa7.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message=FALSE, 
+                      warning=FALSE)
+### DOWNLOAD NEWEST SOURCES
+## befindet sich im DIPF Ordner
+# download.file("https://drive.google.com/uc?export=download&id=1ASV99YHMHSNChSNzqbZwvz2SiqYvmqO_",
+#               "www/references.bib", overwrite = T)
+
+
+library(fontawesome)
+library(tidyverse)
+```
+
+
+
+## Why reproducibility matters
+
+::::{.columns}
+:::{.column .purpleBG width="46%"}
+**RESEARCHER A:**  
+"I baked this cake...
+
+* with **these ingredients** `r fa("egg", height = "20px")``r fa("wheat-awn", height = "20px")``r fa("apple-whole", height = "20px")``r fa("bottle-water", height = "20px")``r fa("jar", height = "20px")`
+* and **this recipe** `r fa("clipboard-list", height = "20px")`"
+
+![](www/snowman1.jpg){width=250px}
+:::
+
+:::{.column width="3%"}
+:::
+
+:::{.column .yellowBG width="46%"}
+**YOU:**  
+"I want that too! So I'll 
+
+* use the **same ingredients** `r fa("egg", height = "20px")``r fa("wheat-awn", height = "20px")``r fa("apple-whole", height = "20px")``r fa("bottle-water", height = "20px")``r fa("jar", height = "20px")`
+* and use the **same recipe** `r fa("clipboard-list", height = "20px")`"
+
+![](www/snowman0.png){width="250px"}
+:::
+::::
+
+
+## Why reproducibility matters
+
+::::{.columns}
+:::{.column .purpleBG width="46%"}
+**RESEARCHER A:**  
+"I baked this cake...
+
+* with **these ingredients** `r fa("egg", height = "20px")``r fa("wheat-awn", height = "20px")``r fa("apple-whole", height = "20px")``r fa("bottle-water", height = "20px")``r fa("jar", height = "20px")`
+* and **this recipe** `r fa("clipboard-list", height = "20px")`"
+
+![](www/snowman1.jpg){width=250px}
+:::
+
+:::{.column width="3%"}
+:::
+
+:::{.column .yellowBG width="46%"}
+**YOU:**  
+"I want that too! So I'll 
+
+* use the **same ingredients** `r fa("egg", height = "20px")``r fa("wheat-awn", height = "20px")``r fa("apple-whole", height = "20px")``r fa("bottle-water", height = "20px")``r fa("jar", height = "20px")`
+* and use the **same recipe** `r fa("clipboard-list", height = "20px")`"
+
+![](www/snowman2.jpg){width="250px"}
+:::
+::::
+
+## Why reproducibility matters
+### What is Reproducibility?
+
+\
+\
+
+|  | Same Data | Different Data |
+|---|---|---|
+| **Same Analysis**<br />&nbsp; | <span class="highlight-bright">Reproducible</span> | Replicable |
+| **Different Analysis** | Robust | Generalizable |
+
+[@NAS.2018, p. 46]
+
+The cumulative nature of science fundamentally depends on researchers building upon others’ findings [@merton.1973]
+
+\
+
+
+> "In principle, all reported evidence should be reproducible" [@Nosek.etal.2022, p. 721]
+
+
+
+
+## Why reproducibility matters
+### "Isn't that a given?"
+
+**@Artner.etal.2021**: **232** scientific claims from **46** journal articles
+\
+
+```{r}
+#| fig-width: 12
+#| fig-height: 7
+#| fig-align: center
+#| fig-dpi: 300
+#| out-width: "80%"
+
+artner <- data.frame(what = factor(c("scientific claims",
+                                     "reproducible",
+                                     "reproducible (strict)",
+                                     "reproducible (strict) \n& procedure of paper"),
+                                   levels = c("scientific claims",
+                                     "reproducible",
+                                     "reproducible (strict)",
+                                     "reproducible (strict) \n& procedure of paper")),
+                     count = c(232, 163, 137, 119),
+                     percent = c("100 %", "70 %", "59 %", "51 %"))
+
+ggplot(artner, aes(x=what, y=count)) +
+  stat_summary(fun=mean, colour="#ff4c4c", geom="line", aes(group = 1), linewidth = 3) +
+  geom_point(size = 6) +
+  annotate("text", x = artner$what, y = artner$count - 15, label = artner$percent, size = 6) +
+  scale_y_continuous(limits = c(0,235)) +
+  xlab("") +
+  ylab("count: scientific claims") +
+  theme_light() +
+  theme(text = element_text(size = 24),
+        plot.background = element_rect(fill = "transparent",
+                                 color = NA_character_),
+        panel.background = element_rect(fill = "transparent",
+                                  color = NA_character_))
+```
+
+
+## Why reproducibility matters
+### "Isn't that a given?" - Why not?
+
+::::{.columns}
+:::{.column width="50%"}
+@Cruwell.etal.2023:  
+All articles from one issue in Psychological Science  
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
+`r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")`  
+`r fa("file-lines", fill="#009e73")`
+
+
+  
+@Hardwicke.etal.2021:  
+Articles, open data badge (Psychological Science, 2014-2015)  
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
+`r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")`
+`r fa("file-lines", fill="#f0e442")`  
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+   
+
+@Obels.etal.2020:  
+36 registered reports that shared both, code and data  
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")`
+
+:::
+
+:::{.column width="1%"}
+
+:::
+
+:::{.column width="47%"}
+`r fa("left-right", fill="#cc79a7", width="30px")` Renaming files\
+`r fa("lock", fill="#cc79a7", width="30px")` Hard-coding file paths\
+\
+
+`r fa("copy", fill="#cc79a7", width="30px")` copy-paste errors\
+`r fa("calculator", fill="#cc79a7", width="30px")` wrong rounding\
+\
+
+`r fa("box", fill="#cc79a7", width="30px")` Old package versions\
+`r fa("computer", fill="#cc79a7", width="30px")` Non-standardized computational environment (e.g., Older software versions)
+
+[@Batinovic.Carlsson.2023]
+:::
+::::
+
+::: notes
+* There is some evidence that this is not just happening **occasionally**. Maybe even more than you think.
+* Crüwell were able to re-run the code of **1 of 14** journal articles producing the **same results** as in the paper
+* Hardwicke.etal.2021: **9 out of 25**
+* Obels: **21 out of 36**
+  
+* There are many reasons why results are not reproducible
+* I would just like to direct your attention to the latter two, with which we are particularly concerned today
+* And that is having the right package versions and working in the right environment
+* Sometimes - not all the time - if your code was written with older package versions or with an older R version, it will throw you error messages if you'd try to run it now
+:::
+
+## Why reproducibility matters
+### High cost, if not reproducible
+![](www/artner.png)  
+[@Artner.etal.2021, p. 12]
+
+## Why reproducibility matters
+### Everyday situations in your research process
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+**Joint analyses<br />with co-authors**  
+`r fa("people-arrows", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"}
+**Reviewers check<br />your analyses.**  
+`r fa("file-circle-check", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+**Further analysis<br />after review**  
+`r fa("pen-to-square", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"}
+**Recalculation<br />for meta-analysis**  
+`r fa("chart-gantt", height = "90px", prefer_type = "solid")`  
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*System-independent executable*
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Executable<br />free of charge*
+:::
+
+:::{.column .greyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Comprehensible for yourself and others*
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Executable<br />over the long term*
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .text-center width="24%"}
+*<span class="highlight-bright">Compute</span>*  
+*<span class="highlight-bright">environment</span>*  
+*<span class="highlight-bright">control</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+*<span class="highlight-bright">Cost-free</span>*  
+*<span class="highlight-bright">software</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+*<span class="highlight-bright">Literate</span>*  
+*<span class="highlight-bright">programming</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+*<span class="highlight-bright">Compute</span>*  
+*<span class="highlight-bright">environment</span>*  
+*<span class="highlight-bright">control</span>*  
+:::
+::::
+
+::::{.columns}
+:::{.column .text-center .border-top width="100%"}
+![](www/FAIR_data_principles.jpg){width=250px}
+:::
+::::
+
+
+
+
+## Reproducible Reporting {.section-title .dark-slide}
+
+## Basic requirement
+### I assume that's a given
+
+* Share data and analyses (see closed_data() function from WORCS or synthpop package in case you can’t share data) 
+* Set up your work as a ‘project’, where all related files (e.g., data, scripts, results) are stored together in a single folder (as with R-projects) or in a single file (as with JASP and jamovi). Avoid working with isolated files, and use relative paths to connect files within the project.
+* Use a clear folder structure and readme files
+
+[@peng.2011]
+
+
+The Workflow for [Open Reproducible Code in Science (WORCS)]() is an excellent framework that also integrates recommendations I give here. [@vanlissa.2021]
+
+
+## Beyond Code and Data
+
+**Remaining challenges:**
+
+- Which code file on which data in which order?
+- Software version differences
+- Operating system dependencies
+- Package version conflicts
+
+**Educational research:** Often multi-step procedures with various software packages
+
+---
+
+## The Reproducibility Spectrum
+
+```
+Not reproducible ←―――――――――――――→ Gold standard
+```
+
+1. Publication only
+2. Publication + Code
+3. Publication + Code and Data
+4. Linked, executable code and data
+5. Isolated computational environment (Docker, Binder, Quarto-live)
+
+---
+
+## Literate Programming: The Key
+
+**Concept by Knuth (1984):**
+
+- Interweaving natural language and code
+- Human-readable documentation
+- Code, output, and narrative in one document
+
+**Modern implementation:**
+- Quarto
+- R Markdown
+- Jupyter Notebooks
+
+---
+
+## Example: Quarto Document
+
+**Left side:** Markdown + Code blocks  
+**Right side:** Rendered document
+
+- Direct traceability from text to computation
+- Every coefficient traceable to its calculation
+- Automatic documentation of analytical decisions
+- Output in .docx, .pdf, .html, and more
+
+---
+
+## Benefits of Reproducible Reporting
+
+**For science:**
+
+- Error detection by reviewers and readers
+- Learning from methodological details
+- Building on previous work
+
+**For you:**
+
+- Better organized workflow
+- Easier to revise analyses
+- Documented decisions for future reference
+- Facilitates collaboration
+
+---
+
+## Computational Reproducibility
+
+**Problem:** Different software versions, operating systems
+
+**Solutions:**
+
+1. **Basic:** Provide code + data + session info
+2. **Better:** Use package management (renv, conda)
+3. **Best:** Containerization (Docker) or web-based execution (Quarto-live)
+
+---
+
+## Quarto-Live: Full Reproducibility
+
+**Three lines of code change:**
+
+```yaml
+format: live-html
+engine: knitr
+```
+
+**Result:**
+
+- Completely isolated computational environment
+- Accessible via browser
+- Executable via WebAssembly
+- No software installation needed
+- No version conflicts possible
+
+---
+
+# FAIR Data Management
+
+## Reproducibility Requires Access
+
+---
+
+## Reproducibility Enables Cumulative Science
+
+**Science is fundamentally cumulative (Merton 1973):**
+
+1. **Verification:** Can we reproduce the finding?
+2. **Extension:** Can we build on this work?
+3. **Integration:** Can we combine multiple studies?
+
+**Each step requires:**
+
+- Access to materials
+- Understanding of methods
+- Ability to reuse data and code
+
+---
+
+## The Cost of Non-Reproducibility
+
+**Artner et al. (2021) reproduction study:**
+
+- Attempted to reproduce 232 statistical claims from 46 articles
+- Investment: **280 person-days of work**
+- Success rate: Only **70%**
+
+**Their conclusion:** *"Vagueness makes assessing reproducibility a nightmare"*
+
+**The problem:** Inadequate documentation and data management
+
+---
+
+## FAIR as Systematic Solution
+
+**FAIR Principles provide structure for:**
+
+- Making research products discoverable
+- Ensuring long-term accessibility
+- Enabling technical compatibility
+- Supporting informed reuse
+
+**Not just "making data available" but making it systematically reusable**
+
+---
+
+## From Reproducible to Reusable
+
+**Reproducible reporting solves one problem:**
+
+- "Can I recreate your results with your data and code?"
+
+**But another problem remains:**
+
+- "Can I actually find and access your data and code?"
+- "Can I understand what your data contains?"
+- "Can I legally and practically reuse your materials?"
+
+**→ FAIR principles address these questions**
+
+---
+
+## Why FAIR Matters for Reproducibility
+
+**Real examples of reproducibility barriers:**
+
+- Stimulus materials posted but copyright unclear → Cannot reuse
+- Data available but no codebook → Cannot understand variables
+- Referenced data links broken → Cannot access
+- Authors left institution → Cannot locate materials
+
+**Availability alone ≠ Reproducibility**
+
+---
+
+## FAIR Principles
+
+- **F**indable
+- **A**ccessible
+- **I**nteroperable
+- **R**eusable
+
+Framework for systematic practices that enable reuse
+
+---
+
+## FAIR ≠ Open
+
+- FAIR does not necessarily mean "freely accessible"
+- Particularly relevant for vulnerable populations
+- Metadata remain publicly accessible
+- Access path transparently documented
+
+**Principle:** "As open as possible, as closed as necessary"
+
+---
+
+## Empirical Evidence for FAIR
+
+**Health research (Martínez-García et al. 2023):**
+
+- 56.6% time savings in research data management
+- Monthly savings: €16,800
+
+**Reproducibility study (Artner et al. 2021):**
+
+- 232 statistical claims from 46 articles
+- 280 person-days of work
+- Only 70% successfully reproduced
+
+---
+
+## F - Findable
+
+**Components:**
+
+1. Persistent, unique identifiers (DOIs)
+2. Rich metadata
+3. Indexing in searchable databases
+
+**Repositories:**
+- Zenodo.org
+- OSF.io
+- Research data centers (e.g., Verbund FDB)
+
+---
+
+## A - Accessible
+
+**Gradations:**
+
+- Freely available research products
+- Controlled access (private repositories)
+- Regulated access via research data centers
+
+**Important:** Transparent documentation of access path
+
+---
+
+## I - Interoperable
+
+**Use of standardized, open formats:**
+
+- Data: CSV with codebook, labeled .Rdata, ODF
+- Code: R, Python (not MPlus, STATA)
+- Avoiding proprietary software
+
+**Alternative open-source software:**
+
+- Jamovi, JASP (instead of SPSS)
+
+---
+
+## R - Reusable
+
+**Comprehensive documentation:**
+
+- Codebooks for each variable
+- README files
+- Terms of use and licensing information (CC0, CC-BY, CC-BY-SA)
+- Research context and framework
+- Data quality issues
+
+**Standards:** PSYCH-DS for psychological data
+
+---
+
+## FAIR in Educational Research
+
+**Good examples:**
+
+- National Educational Panel Study (NEPS)
+- PISA
+- PIRLS
+
+**Challenge:** Scalable approaches for smaller projects with limited resources
+
+---
+
+## Frequently Asked Questions
+
+---
+
+## "Reproducibility sounds time-consuming"
+
+**Answer:**
+
+**Initial investment:** Yes, there's a learning curve
+
+**Long-term benefits:**
+
+- Faster revisions (code is already there)
+- Easier collaboration (others can understand your work)
+- Better organized workflow
+- More citations and trust
+
+**Think incremental:** Start small, improve gradually
+
+---
+
+## "My code is messy and embarrassing"
+
+**Answer:**
+
+**The paradox of open code:**
+
+1. Knowing others will see it → You write better code
+2. Better code → Less error-prone, better documented
+3. Better documentation → Others can learn from it
+
+**Perfect is the enemy of good:** 
+Imperfect but documented code > No code at all
+
+---
+
+## "What about proprietary/sensitive data?"
+
+**Answer:**
+
+**FAIR ≠ Open:**
+
+- Metadata can be public even if data isn't
+- Controlled access is still FAIR
+- Document access procedures transparently
+
+**For educational research:**
+
+- "As open as possible, as closed as necessary"
+- Research data centers provide secure solutions
+- Synthetic data for methods illustration
+
+---
+
+## "I'll be scooped!"
+
+**Answer:**
+
+**Your advantages persist:**
+
+- Deep knowledge of your data and design
+- First-mover advantage in publication
+- Invitations to collaborate on reuse
+
+**Reframing:**
+
+- Reuse = validation of your work
+- Citations from secondary analyses
+- Broader impact of your research
+
+**Science as common good:** Collective progress benefits everyone
+
+---
+
+## Conclusion
+
+**Reproducibility is not optional—it's core to science:**
+
+- Verification of findings
+- Error detection and correction
+- Cumulative knowledge building
+
+**Two practical approaches:**
+
+1. **Reproducible Reporting** → Document your complete workflow
+2. **FAIR Data Management** → Enable systematic reuse
+
+**Result:** Stronger, more credible, more impactful research
+
+---
+
+## Take-Home Message
+
+**Reproducibility means:**
+
+- Publishing isn't complete without data and code
+- Documentation is as important as analysis
+- FAIR principles make reuse systematic, not accidental
+
+**Start today:**
+
+- Try literate programming for your next analysis
+- Deposit your next dataset with a DOI
+- Document one more step than you did last time
+
+**Perfect is the enemy of good—begin somewhere!** 💪
+
+---
+
+## Thank You for Your Attention!
+
+Questions?
+
+---
+
+## Key References
+
+- Artner et al. (2021). The reproducibility of statistical results in psychological research. *Psychological Methods*.
+- Peng (2011). Reproducible research in computing science. *Science*.
+- Wilkinson et al. (2016). The FAIR Guiding Principles. *Scientific Data*.
+- Hardwicke et al. (2018, 2021). Data availability and analytic reproducibility studies. *Royal Society Open Science*.
+
+Complete reference list available in the paper.
+
+
+
+
+
+
+
+
+## References
+
+::: {#refs}
+:::
+
+
+## Credit
+
+Title image by <a href="https://unsplash.com/de/@raelframes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">rael frames</a> on <a href="https://unsplash.com/de/fotos/bundel-reifer-bananen-hangen-an-einem-marktstand-sVBMKFR4f_U?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+Olaf (from Frozen): [dailymail.co.uk](https://www.dailymail.co.uk/lifestyle/article-10057879/Social-media-users-share-hilarious-snaps-biggest-baking-disasters-theyve-encountered.html)  
+  
+FAIR-Logo: SangyaPundir on [wikimedia commons](https://commons.wikimedia.org/wiki/File:FAIR_data_principles.jpg)
