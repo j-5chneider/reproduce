@@ -20,6 +20,7 @@ format:
       height: 850
       hide-inactive-cursor: false
       embed-resources: true
+      code-line-numbers: false
 editor: source
 editor_options: 
   chunk_output_type: console
@@ -32,16 +33,15 @@ csl: www/apa7.csl
 knitr::opts_chunk$set(echo = FALSE,
                       message=FALSE, 
                       warning=FALSE)
-### DOWNLOAD NEWEST SOURCES
-## befindet sich im DIPF Ordner
-# download.file("https://drive.google.com/uc?export=download&id=1ASV99YHMHSNChSNzqbZwvz2SiqYvmqO_",
-#               "www/references.bib", overwrite = T)
-
 
 library(fontawesome)
 library(tidyverse)
 ```
 
+
+- which software package
+- what are major concerns?
+- 
 
 
 ## Why reproducibility matters
@@ -112,7 +112,23 @@ library(tidyverse)
 
 [@NAS.2018, p. 46]
 
-The cumulative nature of science fundamentally depends on researchers building upon others’ findings [@merton.1973]
+
+## Why reproducibility matters
+### What is Reproducibility?
+
+\
+\
+
+|  | Same Data | Different Data |
+|---|---|---|
+| **Same Analysis**<br />&nbsp; | <span class="highlight-bright">Reproducible</span> | Replicable |
+| **Different Analysis** | Robust | Generalizable |
+
+[@NAS.2018, p. 46]
+
+\
+
+`r fa("arrow-right", height = "30px")` The **cumulative nature of science** fundamentally depends on researchers building upon others’ findings [@merton.1973]
 
 \
 
@@ -163,6 +179,51 @@ ggplot(artner, aes(x=what, y=count)) +
 
 
 ## Why reproducibility matters
+### "Isn't that a given?"
+
+::::{.columns}
+:::{.column width="50%"}
+@Cruwell.etal.2023:  
+All articles from one issue in Psychological Science  
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
+`r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")`  
+`r fa("file-lines", fill="#009e73")`
+
+
+  
+@Hardwicke.etal.2021:  
+Articles, open data badge (Psychological Science, 2014-2015)  
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
+`r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")``r fa("file-lines", fill="#f0e442")`
+`r fa("file-lines", fill="#f0e442")`  
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+   
+
+@Obels.etal.2020:  
+36 registered reports that shared both, code and data  
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
+`r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
+`r fa("file-lines", fill="#009e73")`
+
+:::
+
+:::{.column width="1%"}
+:::
+
+:::{.column width="47%"}
+:::
+::::
+
+
+## Why reproducibility matters
 ### "Isn't that a given?" - Why not?
 
 ::::{.columns}
@@ -205,7 +266,7 @@ Articles, open data badge (Psychological Science, 2014-2015)
 
 :::{.column width="47%"}
 `r fa("left-right", fill="#cc79a7", width="30px")` Renaming files\
-`r fa("lock", fill="#cc79a7", width="30px")` Hard-coding file paths\
+`r fa("lock", fill="#cc79a7", width="30px")` Hard-coding (absolute) file paths\
 \
 
 `r fa("copy", fill="#cc79a7", width="30px")` copy-paste errors\
@@ -236,6 +297,70 @@ Articles, open data badge (Psychological Science, 2014-2015)
 ![](www/artner.png)  
 [@Artner.etal.2021, p. 12]
 
+
+::: {.notes}
+Investment: **280 person-days of work**
+:::
+
+
+
+## Why reproducibility matters
+### Everyday situations in your research process
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+**Joint analyses<br />with co-authors**  
+`r fa("people-arrows", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"} 
+:::
+
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"} 
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"} 
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*System-independent executable*
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+:::
+
+:::{.column .greyBGmargin .text-center width="24%"}
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Compute environment</span>*  
+*<span class="highlight-bright">control</span>*  
+:::
+
+:::{.column .text-center width="24%"}  
+:::
+
+:::{.column .text-center width="24%"} 
+:::
+
+:::{.column .text-center width="24%"} 
+:::
+::::
+
 ## Why reproducibility matters
 ### Everyday situations in your research process
 
@@ -247,7 +372,143 @@ Articles, open data badge (Psychological Science, 2014-2015)
 :::
 
 :::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"}
-**Reviewers check<br />your analyses.**  
+**Reviewers check<br />your analyses**  
+`r fa("file-circle-check", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"} 
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*System-independent executable*
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Executable<br />free of charge*
+:::
+
+:::{.column .greyBGmargin .text-center width="24%"}
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Compute environment</span>*  
+*<span class="highlight-bright">control</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Cost-free</span>*  
+*<span class="highlight-bright">software</span>*  
+:::
+
+:::{.column .text-center width="24%"} 
+:::
+
+:::{.column .text-center width="24%"} 
+:::
+::::
+
+
+## Why reproducibility matters
+### Everyday situations in your research process
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+**Joint analyses<br />with co-authors**  
+`r fa("people-arrows", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"}
+**Reviewers check<br />your analyses**  
+`r fa("file-circle-check", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+**Further analysis<br />after review**  
+`r fa("pen-to-square", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"} 
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*System-independent executable*
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Executable<br />free of charge*
+:::
+
+:::{.column .greyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Comprehensible for yourself and others*
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Compute environment</span>*  
+*<span class="highlight-bright">control</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Cost-free</span>*  
+*<span class="highlight-bright">software</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Literate</span>*  
+*<span class="highlight-bright">programming</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+:::
+::::
+
+## Why reproducibility matters
+### Everyday situations in your research process
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+**Joint analyses<br />with co-authors**  
+`r fa("people-arrows", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"}
+**Reviewers check<br />your analyses**  
 `r fa("file-circle-check", height = "90px", prefer_type = "solid")`  
 :::
 
@@ -290,30 +551,112 @@ Articles, open data badge (Psychological Science, 2014-2015)
 
 ::::{.columns}
 :::{.column .text-center width="24%"}
-*<span class="highlight-bright">Compute</span>*  
-*<span class="highlight-bright">environment</span>*  
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Compute environment</span>*  
 *<span class="highlight-bright">control</span>*  
 :::
 
 :::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
 *<span class="highlight-bright">Cost-free</span>*  
 *<span class="highlight-bright">software</span>*  
 :::
 
 :::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
 *<span class="highlight-bright">Literate</span>*  
 *<span class="highlight-bright">programming</span>*  
 :::
 
 :::{.column .text-center width="24%"}
-*<span class="highlight-bright">Compute</span>*  
-*<span class="highlight-bright">environment</span>*  
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Compute environment</span>*  
+*<span class="highlight-bright">control</span>*  
+:::
+::::
+
+
+
+## Why reproducibility matters
+### Everyday situations in your research process
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+**Joint analyses<br />with co-authors**  
+`r fa("people-arrows", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"}
+**Reviewers check<br />your analyses**  
+`r fa("file-circle-check", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .greyBGmargin .text-center .bigger-font width="24%"}
+**Further analysis<br />after review**  
+`r fa("pen-to-square", height = "90px", prefer_type = "solid")`  
+:::
+
+:::{.column .darkgreyBGmargin .text-center .bigger-font width="24%"}
+**Recalculation<br />for meta-analysis**  
+`r fa("chart-gantt", height = "90px", prefer_type = "solid")`  
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .greyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*System-independent executable*
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Executable<br />free of charge*
+:::
+
+:::{.column .greyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Comprehensible for yourself and others*
+:::
+
+:::{.column .darkgreyBGmargin .text-center width="24%"}
+`r fa("circle-check", fill = "#79B530", height = "45px", prefer_type = "solid")`  
+*Executable<br />over the long term*
+:::
+::::
+
+
+
+::::{.columns}
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Compute environment</span>*  
+*<span class="highlight-bright">control</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Cost-free</span>*  
+*<span class="highlight-bright">software</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Literate</span>*  
+*<span class="highlight-bright">programming</span>*  
+:::
+
+:::{.column .text-center width="24%"}
+`r fontawesome::fa("lemon", height = "40px", prefer_type = "solid", fill = "#FFEE8C")`  
+*<span class="highlight-bright">Compute environment</span>*  
 *<span class="highlight-bright">control</span>*  
 :::
 ::::
 
 ::::{.columns}
-:::{.column .text-center .border-top width="100%"}
+:::{.column .text-center .border-top1 width="100%"}
 ![](www/FAIR_data_principles.jpg){width=250px}
 :::
 ::::
@@ -321,49 +664,182 @@ Articles, open data badge (Psychological Science, 2014-2015)
 
 
 
-## Reproducible Reporting {.section-title .dark-slide}
+## Low hanging fruits `r fontawesome::fa("lemon", height = "80px", prefer_type = "solid", fill = "#FFEE8C")` {.section-title .dark-slide}
 
 ## Basic requirement
-### I assume that's a given
+### I assume that's a given!
 
-* Share data and analyses (see closed_data() function from WORCS or synthpop package in case you can’t share data) 
-* Set up your work as a ‘project’, where all related files (e.g., data, scripts, results) are stored together in a single folder (as with R-projects) or in a single file (as with JASP and jamovi). Avoid working with isolated files, and use relative paths to connect files within the project.
-* Use a clear folder structure and readme files
+
+::::{.columns}
+:::{.column width = "49%"}
+::: {.callout-note}
+#### Share data and analyses
+see closed_data() function from WORCS or synthpop package in case you can’t share data
+:::
+
+\
+
+::: {.callout-note}
+#### Set up your work as a ‘project’
+where all related files (e.g., data, scripts, results) are stored together in a folder (as with R-projects) or in a single file (as with JASP and jamovi)
+:::
+:::
+:::{.column width = "49%"}
+::: {.callout-note}
+#### Use a clear folder structure and readme files
+see e.g., [PSYCH-DS](https://psych-ds.github.io/) (see technical specification draft)<br />&nbsp;
+:::
+
+\
+
+::: {.callout-tip}
+The Workflow for [Open Reproducible Code in Science (WORCS)]() is an excellent framework that also integrates recommendations I give here. [@vanlissa.2021]
+:::
+:::
+::::
 
 [@peng.2011]
 
 
-The Workflow for [Open Reproducible Code in Science (WORCS)]() is an excellent framework that also integrates recommendations I give here. [@vanlissa.2021]
+## Fruit 1 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Cost-free software
+### Script based software
+
+::::{.columns}
+:::{.column width = "30%" .text-center}
+\
+
+![](www/mplus_logo.png){width=50%}  
+**511 - 769 €**
+:::
 
 
-## Beyond Code and Data
+:::{.column width = "5%" .text-center}
+\
+\
 
-**Remaining challenges:**
+`r fontawesome::fa("arrow-right", height = "60px", prefer_type = "solid")`  
+:::
 
-- Which code file on which data in which order?
-- Software version differences
-- Operating system dependencies
-- Package version conflicts
 
-**Educational research:** Often multi-step procedures with various software packages
+:::{.column width = "30%" .text-center}
+<a href="https://www.edx.org/learn/r-programming/harvard-university-data-science-r-basics" target="_blank" class="infobtn">![](www/rstudio_icon.png){width="100"}<br /><b>Intro to R</b><br />(edX online course)</a> 
+:::
 
----
+:::{.column width = "30%" .text-center}
+<a href="https://www.edx.org/learn/data-science/harvard-university-introduction-to-data-science-with-python" target="_blank" class="infobtn">![](www/python_icon.png){width="100"}<br /><b>Intro to python</b><br />(edX online course)</a> 
+:::
 
-## The Reproducibility Spectrum
+::::
 
-```
-Not reproducible ←―――――――――――――→ Gold standard
-```
 
-1. Publication only
-2. Publication + Code
-3. Publication + Code and Data
-4. Linked, executable code and data
-5. Isolated computational environment (Docker, Binder, Quarto-live)
 
----
 
-## Literate Programming: The Key
+## Fruit 1 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Cost-free software
+### Script based software
+
+::::{.columns}
+:::{.column width = "30%" .text-center}
+\
+
+![](www/mplus_logo.png){width=50%}  
+**511 - 769 €**
+:::
+
+
+:::{.column width = "5%" .text-center}
+\
+\
+
+`r fontawesome::fa("arrow-right", height = "60px", prefer_type = "solid")`  
+:::
+
+
+:::{.column width = "30%" .text-center}
+<a href="https://www.edx.org/learn/r-programming/harvard-university-data-science-r-basics" target="_blank" class="infobtn">![](www/rstudio_icon.png){width="100"}<br /><b>Intro to R</b><br />(edX online course)</a> 
+:::
+
+:::{.column width = "30%" .text-center}
+<a href="https://www.edx.org/learn/data-science/harvard-university-introduction-to-data-science-with-python" target="_blank" class="infobtn">![](www/python_icon.png){width="100"}<br /><b>Intro to python</b><br />(edX online course)</a> 
+:::
+
+::::
+
+### Point-and-click software
+
+::::{.columns}
+:::{.column width = "30%" .text-center}
+![](www/spss_logo.png){width=50%}  
+**from ~117 € per month**
+:::
+
+
+:::{.column width = "5%" .text-center}
+\
+\
+
+`r fontawesome::fa("arrow-right", height = "60px", prefer_type = "solid")`  
+:::
+
+
+:::{.column width = "30%" .text-center}
+<a href="https://www.youtube.com/watch?v=APRaBFC2lEQ" target="_blank" class="infobtn">![](www/jasp_logo.png){width="100"}<br /><b>Intro to JASP</b><br />(youtube: JASP Statistics)</a> 
+:::
+
+:::{.column width = "30%" .text-center}
+<a href="https://www.youtube.com/watch?v=mZomeS0tLxY" target="_blank" class="infobtn">![](www/jamovi_logo.png){width="100"}<br /><b>Intro to jamovi</b><br />(youtube: freeCodeCamp.org)</a>
+:::
+
+::::
+
+
+::: {.notes}
+* Imagine you are the reviewer of a paper and want to rerun the analyses.  
+* At the moment, I would not be able to run MPlus code
+* I recently switched affiliation to a new university, if I had MPlus code from old projects -> not be able to run 
+:::
+
+
+## Fruit 1 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Cost-free software
+
+:::: {.columns}
+:::{.column width = "8%"}
+\
+\
+\
+\
+\
+
+![](www/jasp_logo.png)
+:::
+:::{.column width = "91%"}
+![](www/jasp_regression.jpg)  
+*also opens .sav-files from SPSS*
+:::
+::::
+
+
+## Fruit 1 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Cost-free software
+
+:::: {.columns}
+:::{.column width = "8%"}
+\
+\
+\
+\
+\
+
+![](www/jamovi_logo.png)
+:::
+:::{.column width = "91%"}
+![](www/jamovi_regression.jpg)  
+*also opens .sav-files from SPSS*
+:::
+::::
+
+
+## Fruit 2 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Literate Programming
+
+\
 
 **Concept by Knuth (1984):**
 
@@ -371,55 +847,59 @@ Not reproducible ←―――――――――――――→ Gold standard
 - Human-readable documentation
 - Code, output, and narrative in one document
 
+\
+
 **Modern implementation:**
-- Quarto
-- R Markdown
-- Jupyter Notebooks
 
----
 
-## Example: Quarto Document
+:::: {.columns}
+:::{.column width = "15%" .text-center}
+*Quarto*  
+![](www/quarto_logo.png){width="75%"}
+:::
+:::{.column width = "15%" .text-center}
+*RMarkdown*  
+![](www/rmarkdown_logo.png){width="75%"}
+:::
+:::{.column width = "15%" .text-center}
+*Jupyter Notebooks*  
+![](www/jupyter_logo.png){width="75%"}
+:::
+::::
+
+
+## Fruit 2 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Literate Programming
+### Example: Quarto Document
 
 **Left side:** Markdown + Code blocks  
-**Right side:** Rendered document
+**Right side:** Rendered document (HTML, PDF or Word)
 
-- Direct traceability from text to computation
-- Every coefficient traceable to its calculation
-- Automatic documentation of analytical decisions
-- Output in .docx, .pdf, .html, and more
 
----
+![](www/input_output.jpg){.border1}  
 
-## Benefits of Reproducible Reporting
+Click here for [an example](https://raw.githack.com/j-5chneider/MoWi-KI/refs/heads/main/analyses/analyses_revision_excl_engagement_ai.html) from one of my papers.
 
-**For science:**
 
-- Error detection by reviewers and readers
-- Learning from methodological details
-- Building on previous work
+## Fruit 2 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Literate Programming
+### Example: JASP
 
-**For you:**
+**Add notes** to improve comprehensibility of your output  
+**Also works** with jamovi  
 
-- Better organized workflow
-- Easier to revise analyses
-- Documented decisions for future reference
-- Facilitates collaboration
+:::: {.columns}
+:::{.column width = "50%" .text-center}
+![](www/jasp_note1.jpg){.border1}
+:::
+:::{.column width = "50%" .text-center}
+![](www/jasp_note2.jpg){.border1}
+:::
+::::
 
----
 
-## Computational Reproducibility
 
-**Problem:** Different software versions, operating systems
 
-**Solutions:**
-
-1. **Basic:** Provide code + data + session info
-2. **Better:** Use package management (renv, conda)
-3. **Best:** Containerization (Docker) or web-based execution (Quarto-live)
-
----
-
-## Quarto-Live: Full Reproducibility
+## Next level:
+### Quarto-Live: Full Reproducibility
 
 **Three lines of code change:**
 
@@ -436,197 +916,415 @@ engine: knitr
 - No software installation needed
 - No version conflicts possible
 
----
 
-# FAIR Data Management
+## Fruit 3 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Compute environment control
 
-## Reproducibility Requires Access
+\
 
----
+:::: {.columns}
+:::{.column width = "20%" .text-center}
+:::
+:::{.column width = "25%" .text-center}
+**package<br />versions**  
+:::
+:::{.column width = "25%" .text-center}
+**computational<br />environment**
+:::
+:::{.column width = "25%"}
+:::
+::::
 
-## Reproducibility Enables Cumulative Science
+:::: {.columns}
+:::{.column width = "20%" .text-center .border-top1}
+![](www/renv_logo.png){width="60%"}
+:::
+:::{.column width = "25%" .text-center .border-top1}
+\
 
-**Science is fundamentally cumulative (Merton 1973):**
+`r fa("circle-check", fill = "#79B530", height = "80px", prefer_type = "solid")`  
+:::
+:::{.column width = "25%" .text-center .border-top1}
+:::
+:::{.column width = "25%"}
+:::
+::::
 
-1. **Verification:** Can we reproduce the finding?
-2. **Extension:** Can we build on this work?
-3. **Integration:** Can we combine multiple studies?
+:::: {.columns}
+:::{.column width = "20%" .text-center .border-top1}
+![](www/groundhog_logo.png){width="60%"}
+:::
+:::{.column width = "25%" .text-center .border-top1}
+`r fa("circle-check", fill = "#79B530", height = "80px", prefer_type = "solid")`  
+:::
+:::{.column width = "25%" .text-center .border-top1}
+:::
+:::{.column width = "25%"}
+:::
+::::
 
-**Each step requires:**
+:::: {.columns}
+:::{.column width = "20%" .text-center .border-top1}
+![](www/holepunch_logo.png){width="60%"}
+:::
+:::{.column width = "25%" .text-center .border-top1}
+:::
+:::{.column width = "25%" .text-center .border-top1}
+\
 
-- Access to materials
-- Understanding of methods
-- Ability to reuse data and code
+`r fa("circle-check", fill = "#79B530", height = "80px", prefer_type = "solid")`  
+:::
+:::{.column width = "25%"}
+:::
+::::
 
----
+## Fruit 3 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Compute environment control
+\
 
-## The Cost of Non-Reproducibility
+**You**  
+let `renv` document your packages
+```{r}
+#| eval: false
+#| echo: true
+#| code-block-bg: true
+#| code-block-border-left: "#FFEE8C"
 
-**Artner et al. (2021) reproduction study:**
+renv::init()     # only 1x at any point
 
-- Attempted to reproduce 232 statistical claims from 46 articles
-- Investment: **280 person-days of work**
-- Success rate: Only **70%**
+renv::snapshot() # documents all used packages 
+                 # (re-run only if new packages were installed)
+```
 
-**Their conclusion:** *"Vagueness makes assessing reproducibility a nightmare"*
+\
 
-**The problem:** Inadequate documentation and data management
+**Others**  
+let `renv` restore this setup
+```{r}
+#| eval: false
+#| echo: true
 
----
+renv::restore()  # to restore your setup of packages
+```
 
-## FAIR as Systematic Solution
 
-**FAIR Principles provide structure for:**
+## FAIR Management {.section-title .dark-slide}
+**of research products**
 
-- Making research products discoverable
-- Ensuring long-term accessibility
-- Enabling technical compatibility
-- Supporting informed reuse
 
-**Not just "making data available" but making it systematically reusable**
-
----
-
-## From Reproducible to Reusable
-
-**Reproducible reporting solves one problem:**
-
-- "Can I recreate your results with your data and code?"
-
-**But another problem remains:**
-
-- "Can I actually find and access your data and code?"
-- "Can I understand what your data contains?"
-- "Can I legally and practically reuse your materials?"
-
-**→ FAIR principles address these questions**
-
----
 
 ## Why FAIR Matters for Reproducibility
 
-**Real examples of reproducibility barriers:**
+\
 
-- Stimulus materials posted but copyright unclear → Cannot reuse
-- Data available but no codebook → Cannot understand variables
-- Referenced data links broken → Cannot access
-- Authors left institution → Cannot locate materials
+**Examples of reproducibility barriers I experienced:**
+
+- Data and analyses available, but link was broken → Cannot find
+- Link to analysis was active, but inside the paywalled article → Cannot access
+- Downloaded analysis script, but it was MPlus → Cannot run
+- Ran analyses, but didn't understand which analyses related to which hypotheses → Cannot understand
+
+\
 
 **Availability alone ≠ Reproducibility**
 
----
 
-## FAIR Principles
+## What is FAIR?
+
+\
+
+::::{.columns}
+:::{.column width = "49%"}
+### FAIR Principles
 
 - **F**indable
 - **A**ccessible
 - **I**nteroperable
 - **R**eusable
 
-Framework for systematic practices that enable reuse
+[@wilkinson.2016]
 
----
-
-## FAIR ≠ Open
+:::
+:::{.column width = "49%"}
+### FAIR ≠ Open
 
 - FAIR does not necessarily mean "freely accessible"
 - Particularly relevant for vulnerable populations
 - Metadata remain publicly accessible
 - Access path transparently documented
 
-**Principle:** "As open as possible, as closed as necessary"
+**Principle:** "As open as possible, as closed as necessary" [@europeancommission.2020]
+:::
+::::
 
----
 
-## Empirical Evidence for FAIR
-
-**Health research (Martínez-García et al. 2023):**
-
-- 56.6% time savings in research data management
-- Monthly savings: €16,800
-
-**Reproducibility study (Artner et al. 2021):**
-
-- 232 statistical claims from 46 articles
-- 280 person-days of work
-- Only 70% successfully reproduced
-
----
 
 ## F - Findable
 
-**Components:**
+\
 
-1. Persistent, unique identifiers (DOIs)
-2. Rich metadata
-3. Indexing in searchable databases
+*Just because we provide data and code online, doesn’t mean that others will find it.*
 
-**Repositories:**
-- Zenodo.org
-- OSF.io
-- Research data centers (e.g., Verbund FDB)
+> Being able to consistently locate your research products
 
----
+\
+
+
+**My practical suggestions:**
+
+::::{.columns}
+:::{.column width = "66%"}
+
+* <span class="highlight-bright">Upload</span> research products and <span class="highlight-bright">get a DOI</span> from a...
+  - trusted repsoitory (zenodo.org, osf.io)
+  - research data center (&#127465;&#127466; Verbund FDB, &#127482;&#127480; Open ICPSR, &#127468;&#127463; UK Data Archive)
+
+:::
+:::{.column width = "33%"}
+*Why DOI?*  
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` persistent identifier (URLs may change)  
+  
+*Why repository or rdc?*  
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` You may change affiliation  
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` Files can easily get lost
+:::
+::::
+
+
+:::{.notes}
+We could have the greatest reproducible data and code, but if others can't find these products, reproducibility will be of little value.
+:::
+
+
+## F - Findable
+
+\
+
+*Just because we provide data and code online, doesn’t mean that others will find it.*
+
+> Being able to consistently locate your research products
+
+\
+
+
+**My practical suggestions:**
+
+::::{.columns}
+:::{.column width = "66%"}
+
+* <span class="highlight-bright">Upload</span> research products and <span class="highlight-bright">get a DOI</span> from a...
+  - trusted repsoitory (zenodo.org, osf.io)
+  - research data center (&#127465;&#127466; Verbund FDB, &#127482;&#127480; Open ICPSR, &#127468;&#127463; UK Data Archive)
+
+:::
+:::{.column width = "33%"}
+*Why DOI?*  
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` persistent identifier (URLs may change)  
+  
+*Why repository or rdc?*  
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` You may change affiliation  
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` Files can easily get lost
+:::
+::::
+
+::::{.columns}
+:::{.column width = "66%"}
+
+* put DOI <span class="highlight-bright">in Appendix/ Supplement of paper</span>
+
+:::
+:::{.column width = "33%"}
+*Why not store it with the journal?*  
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` you retain control
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` multiple projects reliably in one place
+:::
+::::
+
+
+
 
 ## A - Accessible
 
-**Gradations:**
+\
 
-- Freely available research products
-- Controlled access (private repositories)
-- Regulated access via research data centers
+> Encountering as few access barriers as possible when retrieving your research products and understanding how they may be used.
 
-**Important:** Transparent documentation of access path
+\
 
----
+
+**My practical suggestions:**
+
+::::{.columns}
+:::{.column width = "66%"}
+
+* Make sure access is as <span class="highlight-bright">open and cheap</span> as possible
+  - repositories allow for public and restricted access
+  - research data centers offer different levels of access restriction
+
+:::
+:::{.column width = "33%"}
+*e.g., by providing the DOI in the publicly accessible sections of journal articles that are paywalled*
+:::
+::::
+
+::::{.columns}
+:::{.column width = "66%"}
+
+* Make sure users know if they can access and <span class="highlight-bright">under which conditions</span>
+
+:::
+:::{.column width = "33%"}
+*e.g., research data centers ensure that terms of use are clear*  
+  
+*e.g., on repositories provide a readme-file and an open license (e.g., [CC0](https://creativecommons.org/public-domain/cc0/), [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.de), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.de)) for access cases*
+:::
+::::
+
+
+
+:::{.notes}
+
+* Providing a link to the data analyses in the text of a paywalled journal article
+* Unclear licensing / use conditions when providing data (e.g., are non-researchers allowed to access the data or is it only open for qualified researchers?)
+
+:::
 
 ## I - Interoperable
+\
 
-**Use of standardized, open formats:**
+*Just because others downloaded our data doesn’t mean they can open and manipulate it.*
 
-- Data: CSV with codebook, labeled .Rdata, ODF
-- Code: R, Python (not MPlus, STATA)
-- Avoiding proprietary software
+> Being able to open your data and execute your analyses
 
-**Alternative open-source software:**
+\
 
-- Jamovi, JASP (instead of SPSS)
+**My practical suggestions:**
 
----
+::::{.columns}
+:::{.column width = "66%"}
+
+* Use openly licensed <span class="highlight-bright">software</span>
+* Use openly licensed <span class="highlight-bright">file formats</span>
+
+:::
+:::{.column width = "33%"}
+*e.g., R, python, JASP, jamovi (see before)*  
+  
+*e.g., .odf ([open data format](https://www.konsortswd.de/en/services/open-data-format/)), .RData (labelled R data set), .csv with labelling script*
+:::
+::::
+
+::::{.columns}
+:::{.column width = "66%"}
+
+* Make sure users know how different files <span class="highlight-bright">are related</span> to one another
+
+:::
+:::{.column width = "33%"}
+*e.g., define which file contains student data and which teacher data*  
+  
+*e.g., define which file contains data from cohort 1 and which cohort 2, ...*
+:::
+::::
+
+
 
 ## R - Reusable
 
-**Comprehensive documentation:**
+\
 
-- Codebooks for each variable
-- README files
-- Terms of use and licensing information (CC0, CC-BY, CC-BY-SA)
-- Research context and framework
-- Data quality issues
+*Just because others are able to open, they are not necessarily able to understand the data and analyses.*
 
-**Standards:** PSYCH-DS for psychological data
+> Being able to understand your data and analyses
 
----
+\
 
-## FAIR in Educational Research
+**My practical suggestions:**
 
-**Good examples:**
+::::{.columns}
+:::{.column width = "66%"}
 
-- National Educational Panel Study (NEPS)
-- PISA
-- PIRLS
+* Understanding data: <span class="highlight-bright">add a codebook</span>
+* Understanding analyses: Use <span class="highlight-bright">literate programming</span>
 
-**Challenge:** Scalable approaches for smaller projects with limited resources
+:::
+:::{.column width = "33%"}
+*See the R package [`codebook`](https://cran.r-project.org/web/packages/codebook/readme/README.html) on how to semi-automatically create a codebook*
+:::
+::::
 
----
 
-## Frequently Asked Questions
+## FAIRness
+### Checklist
 
----
+\
+
+::::{.columns}
+:::{.column width = "15%" .border-top1}
+**Findable**
+:::
+:::{.column width = "25%" .border-top1}
+*Being able to consistently locate your research products*
+:::
+:::{.column width = "59%" .border-top1}
+
+* Upload data and analyses to Zenodo/ OSF and get DOI
+* put DOI in Appendix/Supplement of paper
+
+:::
+::::
+
+::::{.columns}
+:::{.column width = "15%" .border-top1}
+**Accessible**
+:::
+:::{.column width = "25%" .border-top1}
+*Encountering as few access barriers as possible when retrieving your research products and understanding how they may be used.*
+:::
+:::{.column width = "59%" .border-top1}
+
+* make as open as possible
+* add licence
+
+:::
+::::
+
+::::{.columns}
+:::{.column width = "15%" .border-top1}
+**Interoperable**
+:::
+:::{.column width = "25%" .border-top1}
+*Being able to open your data and execute your analyses*
+:::
+:::{.column width = "59%" .border-top1}
+
+* use R/ python/ JASP/ jamovi for analysis
+* save data in .odf/ .RData/ .csv
+
+:::
+::::
+
+::::{.columns}
+:::{.column width = "15%" .border-top1}
+**Reusable**
+:::
+:::{.column width = "25%" .border-top1}
+*Being able to understand your data and analyses*
+:::
+:::{.column width = "59%" .border-top1}
+
+* For data: add a codebook
+* For analyses: Use literate programming
+
+:::
+::::
+
+
+## Frequently Raised Concerns {.section-title .dark-slide}
+
+
 
 ## "Reproducibility sounds time-consuming"
 
-**Answer:**
+\
 
 **Initial investment:** Yes, there's a learning curve
 
@@ -635,30 +1333,28 @@ Framework for systematic practices that enable reuse
 - Faster revisions (code is already there)
 - Easier collaboration (others can understand your work)
 - Better organized workflow
-- More citations and trust
 
 **Think incremental:** Start small, improve gradually
 
----
 
 ## "My code is messy and embarrassing"
 
-**Answer:**
+\
 
 **The paradox of open code:**
 
 1. Knowing others will see it → You write better code
 2. Better code → Less error-prone, better documented
-3. Better documentation → Others can learn from it
+3. Better documentation → You and others are able to reuse
 
 **Perfect is the enemy of good:** 
 Imperfect but documented code > No code at all
 
----
+
 
 ## "What about proprietary/sensitive data?"
 
-**Answer:**
+\
 
 **FAIR ≠ Open:**
 
@@ -672,11 +1368,11 @@ Imperfect but documented code > No code at all
 - Research data centers provide secure solutions
 - Synthetic data for methods illustration
 
----
+
 
 ## "I'll be scooped!"
 
-**Answer:**
+\
 
 **Your advantages persist:**
 
@@ -692,60 +1388,335 @@ Imperfect but documented code > No code at all
 
 **Science as common good:** Collective progress benefits everyone
 
----
+
 
 ## Conclusion
 
-**Reproducibility is not optional—it's core to science:**
+\
 
-- Verification of findings
-- Error detection and correction
-- Cumulative knowledge building
+**Reproducibility is...**
+
+* core to science
+* anything but a given - many potential points of failure
+
+\
 
 **Two practical approaches:**
 
-1. **Reproducible Reporting** → Document your complete workflow
-2. **FAIR Data Management** → Enable systematic reuse
-
-**Result:** Stronger, more credible, more impactful research
-
----
-
-## Take-Home Message
-
-**Reproducibility means:**
-
-- Publishing isn't complete without data and code
-- Documentation is as important as analysis
-- FAIR principles make reuse systematic, not accidental
-
-**Start today:**
-
-- Try literate programming for your next analysis
-- Deposit your next dataset with a DOI
-- Document one more step than you did last time
-
-**Perfect is the enemy of good—begin somewhere!** 💪
-
----
-
-## Thank You for Your Attention!
-
-Questions?
-
----
-
-## Key References
-
-- Artner et al. (2021). The reproducibility of statistical results in psychological research. *Psychological Methods*.
-- Peng (2011). Reproducible research in computing science. *Science*.
-- Wilkinson et al. (2016). The FAIR Guiding Principles. *Scientific Data*.
-- Hardwicke et al. (2018, 2021). Data availability and analytic reproducibility studies. *Royal Society Open Science*.
-
-Complete reference list available in the paper.
+1. <span class="highlight-bright">Reproducible Reporting</span> → raises chances of successful & sustainable analyses
+2. <span class="highlight-bright">FAIR Data Management</span> → make reuse systematic, not accidental
 
 
+## What are your next steps?
+\
 
+**For your next paper:** Plan one step forward on the Reproducibility Spectrum
+
+\
+
+**An example:**
+
+:::: {.columns}
+:::{.column width="16%" .text-center}
+:::
+:::{.column width="16%" .text-center}
+use JASP
+:::
+:::{.column width="16%" .text-center}
+shared project file on zenodo
+:::
+:::{.column width="16%" .text-center}
+link DOI in Appendix
+:::
+:::{.column width="16%" .text-center}
+add notes to JASP output
+:::
+:::{.column width="16%" .text-center}
+add codebook
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="16%" .text-center}
+*Paper1*
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="16%" .text-center}
+*Paper2*
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="16%" .text-center}
+*Paper3*
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="16%" .text-center}
+*Paper4*
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="16%" .text-center}
+*Paper5*
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="16%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+::::
+
+
+
+## What are your next steps?
+\
+
+**For your next paper:** Plan one step forward on the Reproducibility Spectrum
+
+\
+
+**An example:**
+
+:::: {.columns}
+:::{.column width="14%" .text-center}
+:::
+:::{.column width="14%" .text-center}
+shared code and data on zenodo
+:::
+:::{.column width="14%" .text-center}
+link DOI in Appendix
+:::
+:::{.column width="14%" .text-center}
+R for data analysis
+:::
+:::{.column width="14%" .text-center}
+use Quarto-document
+:::
+:::{.column width="14%" .text-center}
+use renv
+:::
+:::{.column width="14%" .text-center}
+add codebook
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="14%" .text-center}
+*Paper1*
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="14%" .text-center}
+*Paper2*
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="14%" .text-center}
+*Paper3*
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="14%" .text-center}
+*Paper4*
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="14%" .text-center}
+*Paper5*
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+:::
+::::
+
+
+:::: {.columns}
+:::{.column width="14%" .text-center}
+*Paper6*
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+:::{.column width="14%" .text-center .border-top1}
+`r fa("circle-check", fill="#79B530", height="45px", prefer_type="solid")`
+:::
+::::
+
+
+
+
+
+## Thank You {.section-title .dark-slide}
+\
+
+**Jürgen Schneider**  
+\
+
+<juergen.schneider@ph-karlsruhe.de>  
+![](www/PHK_2018_Logo_V1_WEISS.svg){width="20%"}
 
 
 

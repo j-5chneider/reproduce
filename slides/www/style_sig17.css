@@ -9,9 +9,13 @@
   border: 1px solid darkgrey;
 }
 
+.border-top1 {
+  border-top: 2px solid darkgrey;
+}
+
 
 .bigger-font {
-  font-size: 1.5em !important;
+  font-size: 1.4em !important;
 }
 
 
@@ -19,6 +23,10 @@
   text-align: center;
 }
 
+
+.callout-body {
+  font-size: 1.2em !important;
+}
 
 /* SECTION SLIDES */
 .section-title {
@@ -34,10 +42,20 @@
 .dark-slide h2,
 .dark-slide p,
 .dark-slide li {
-  color: white !important;
+  color: #FFEE8C !important;
 }
 
+.cell-code {
+  background-color: #dcdcdc !important;
+  border-left: 4px solid #FFEE8C !important;
+  border-top: 0px !important;
+  border-right: 0px !important;
+  border-bottom: 0px !important;
+}
 
+.reveal pre {
+  background-color: #ececec !important;
+}
 
 /* footer logo */
 slides > slide:not(.nobackground):before {
@@ -132,12 +150,12 @@ a:active {
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap');
+
 strong {
-  /*color: #79B530;*/
-  font-family: "Open Sans ExtraBold";
+  font-family: 'Inter', sans-serif;
   font-weight: 900;
 }
-
 
 
 /* ------------- boxes ------------- */
@@ -170,4 +188,27 @@ strong {
 .border-top {
   border-top: 1px solid #3f3f3f;
   width: 100%;
+}
+
+
+/* ------------- button------------- */
+.infobtn {
+    display: inline-block;
+    padding: 7px 15px;
+    background-color: #f8e3df;
+    color: #200b07;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #bd7569;
+    margin-top: 20px;
+}
+
+.infobtn:hover {
+    background-color: #d66450;
+    color: #fff;
+}
+
+.btn-index {
+  width: 33%;
 }
