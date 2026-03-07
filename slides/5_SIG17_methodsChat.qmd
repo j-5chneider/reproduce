@@ -39,9 +39,8 @@ library(tidyverse)
 ```
 
 
-- which software package
-- what are major concerns?
-- 
+## Questions! {.section-title .dark-slide}
+Please go to **pollev.com/js123**
 
 
 ## Why reproducibility matters

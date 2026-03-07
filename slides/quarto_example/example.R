@@ -1,20 +1,20 @@
 library(rio)
 library(dplyr)
 
-# Daten einlesen
+# read data
 mydata <- import("slides/quarto_example/mydata.csv")
 
-# Skala bilden
+# construct scales
 mydata <- mydata |>
-  mutate(lernleistung = rowMeans(data.frame(item1, item2)))
+  mutate(recall = rowMeans(data.frame(item1, item2)))
 
 
-# Regression
-fit <- lm(lernleistung ~ lesekompetenz, data = mydata)
+# compute regression
+fit <- lm(recall ~ reading_skill, data = mydata)
 summary(fit)
 
 
 
-# Vergessen: item2 umpolen
-# (sollten Sie so nicht machen - in dieselbe Variable speichern)
+# forgot to recode negatively coded item
+# (you should never recode into the same variable though...)
 mydata$item2 <- 7 - mydata$item2
