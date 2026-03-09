@@ -1,36 +1,41 @@
 ---
-title: "Analysen"
+title: "Paper: Predicting recall by reading skill"
 editor: visual
 ---
 
-Das sind die Analysen für das Paper ...
+These are analyses for the paper "Predicting recall by reading skill" ...
 
 ```{r}
 #| message: false
 
-library(rio)
 library(dplyr)
 
-# Daten einlesen
-mydata <- import("mydata.csv")
+# read data
+mydata <- read.csv("mydata.csv")
 ```
 
-# Skalenbildung
+# Methods
 
-Zunächst wird das Item 2 umgepolt, dann der Mittelwert über item1 und item2 gebildet.
+## Create Scales
+
+-   Item 2 was reverse coded, so we have to recode (answer options from 1 to 6) first.
+
+-   We create scales by means
 
 ```{r}
-# umpolen
+# recode
 mydata$item2_r <- 7 - mydata$item2
 
-# Skala bilden
+# create scale
 mydata <- mydata |>
-  mutate(lernleistung = rowMeans(data.frame(item1, item2_r)))
+  mutate(recall = rowMeans(data.frame(item1, item2_r)))
 ```
 
-# Hypothese 1
+# Hypothesis 1
+
+> The higher the reading skill, the higher the score in the recall test.
 
 ```{r}
-fit <- lm(lernleistung ~ lesekompetenz, data = mydata)
+fit <- lm(recall ~ reading_skill, data = mydata)
 summary(fit)
 ```

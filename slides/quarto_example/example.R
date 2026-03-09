@@ -1,8 +1,7 @@
-library(rio)
 library(dplyr)
 
 # read data
-mydata <- import("slides/quarto_example/mydata.csv")
+mydata <- read.csv("slides/quarto_example/mydata.csv")
 
 # construct scales
 mydata <- mydata |>
@@ -12,6 +11,49 @@ mydata <- mydata |>
 # compute regression
 fit <- lm(recall ~ reading_skill, data = mydata)
 summary(fit)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

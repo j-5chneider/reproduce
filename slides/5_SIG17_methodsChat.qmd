@@ -12,7 +12,7 @@ format:
   revealjs:
       theme: [white] # sky default
       logo: www/PH_Logo.png
-      footer: "Slides: [t1p.de/gebf25-os](https://t1p.de/gebf25-os)"
+      footer: "Slides: [t1p.de/sig17-repro26](https://t1p.de/sig17-repro26)"
       smaller: true
       scrollable: true
       transition: fade
@@ -41,6 +41,27 @@ library(tidyverse)
 
 ## Questions! {.section-title .dark-slide}
 Please go to **pollev.com/js123**
+
+
+## Why reproducibility matters
+
+::::{.columns}
+:::{.column .purpleBG width="46%"}
+**RESEARCHER A:**  
+"I baked this cake...
+
+* with **these ingredients** `r fa("egg", height = "20px")``r fa("wheat-awn", height = "20px")``r fa("apple-whole", height = "20px")``r fa("bottle-water", height = "20px")``r fa("jar", height = "20px")`
+* and **this recipe** `r fa("clipboard-list", height = "20px")`"
+
+![](www/snowman1.jpg){width=250px}
+:::
+
+:::{.column width="3%"}
+:::
+
+:::{.column width="46%"}
+:::
+::::
 
 
 ## Why reproducibility matters
@@ -104,12 +125,12 @@ Please go to **pollev.com/js123**
 \
 \
 
-|  | Same Data | Different Data |
+|  | **Same Data** | **Different Data** |
 |---|---|---|
 | **Same Analysis**<br />&nbsp; | <span class="highlight-bright">Reproducible</span> | Replicable |
 | **Different Analysis** | Robust | Generalizable |
 
-[@NAS.2018, p. 46]
+[@nas.2018, p. 46]
 
 
 ## Why reproducibility matters
@@ -118,12 +139,12 @@ Please go to **pollev.com/js123**
 \
 \
 
-|  | Same Data | Different Data |
+|  | **Same Data** | **Different Data** |
 |---|---|---|
 | **Same Analysis**<br />&nbsp; | <span class="highlight-bright">Reproducible</span> | Replicable |
 | **Different Analysis** | Robust | Generalizable |
 
-[@NAS.2018, p. 46]
+[@nas.2018, p. 46]
 
 \
 
@@ -132,7 +153,7 @@ Please go to **pollev.com/js123**
 \
 
 
-> "In principle, all reported evidence should be reproducible" [@Nosek.etal.2022, p. 721]
+> "In principle, all reported evidence should be reproducible" [@nosek.2022, p. 721]
 
 
 
@@ -140,7 +161,7 @@ Please go to **pollev.com/js123**
 ## Why reproducibility matters
 ### "Isn't that a given?"
 
-**@Artner.etal.2021**: **232** scientific claims from **46** journal articles
+**@artner.2021**: **232** scientific claims from **46** journal articles
 \
 
 ```{r}
@@ -182,7 +203,7 @@ ggplot(artner, aes(x=what, y=count)) +
 
 ::::{.columns}
 :::{.column width="50%"}
-@Cruwell.etal.2023:  
+@cruwell.2023:  
 All articles from one issue in Psychological Science  
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
@@ -191,7 +212,7 @@ All articles from one issue in Psychological Science
 
 
   
-@Hardwicke.etal.2021:  
+@hardwicke.2021:  
 Articles, open data badge (Psychological Science, 2014-2015)  
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
@@ -201,7 +222,7 @@ Articles, open data badge (Psychological Science, 2014-2015)
 `r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
    
 
-@Obels.etal.2020:  
+@obels.2020:  
 36 registered reports that shared both, code and data  
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
@@ -227,7 +248,7 @@ Articles, open data badge (Psychological Science, 2014-2015)
 
 ::::{.columns}
 :::{.column width="50%"}
-@Cruwell.etal.2023:  
+@cruwell.2023:  
 All articles from one issue in Psychological Science  
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
@@ -236,7 +257,7 @@ All articles from one issue in Psychological Science
 
 
   
-@Hardwicke.etal.2021:  
+@hardwicke.2021:  
 Articles, open data badge (Psychological Science, 2014-2015)  
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`  
@@ -246,7 +267,7 @@ Articles, open data badge (Psychological Science, 2014-2015)
 `r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")``r fa("file-lines", fill="#009e73")`
    
 
-@Obels.etal.2020:  
+@obels.2020:  
 36 registered reports that shared both, code and data  
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
 `r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")``r fa("file-lines", fill="#cc79a7")`
@@ -275,7 +296,7 @@ Articles, open data badge (Psychological Science, 2014-2015)
 `r fa("box", fill="#cc79a7", width="30px")` Old package versions\
 `r fa("computer", fill="#cc79a7", width="30px")` Non-standardized computational environment (e.g., Older software versions)
 
-[@Batinovic.Carlsson.2023]
+[@batinovic.2023]
 :::
 ::::
 
@@ -294,7 +315,7 @@ Articles, open data badge (Psychological Science, 2014-2015)
 ## Why reproducibility matters
 ### High cost, if not reproducible
 ![](www/artner.png)  
-[@Artner.etal.2021, p. 12]
+[@artner.2021, p. 12]
 
 
 ::: {.notes}
@@ -840,7 +861,7 @@ The Workflow for [Open Reproducible Code in Science (WORCS)]() is an excellent f
 
 \
 
-**Concept by Knuth (1984):**
+**Concept by @knuth.1984:**
 
 - Interweaving natural language and code
 - Human-readable documentation
@@ -897,25 +918,6 @@ Click here for [an example](https://raw.githack.com/j-5chneider/MoWi-KI/refs/hea
 
 
 
-## Next level:
-### Quarto-Live: Full Reproducibility
-
-**Three lines of code change:**
-
-```yaml
-format: live-html
-engine: knitr
-```
-
-**Result:**
-
-- Completely isolated computational environment
-- Accessible via browser
-- Executable via WebAssembly
-- No software installation needed
-- No version conflicts possible
-
-
 ## Fruit 3 `r fontawesome::fa("lemon", height = "55px", prefer_type = "solid", fill = "#FFEE8C")` Compute environment control
 
 \
@@ -935,7 +937,7 @@ engine: knitr
 
 :::: {.columns}
 :::{.column width = "20%" .text-center .border-top1}
-![](www/renv_logo.png){width="60%"}
+[![](www/renv_logo.png){width="60%"}](https://rstudio.github.io/renv/articles/renv.html)
 :::
 :::{.column width = "25%" .text-center .border-top1}
 \
@@ -950,7 +952,7 @@ engine: knitr
 
 :::: {.columns}
 :::{.column width = "20%" .text-center .border-top1}
-![](www/groundhog_logo.png){width="60%"}
+[![](www/groundhog_logo.png){width="60%"}](https://groundhogr.com/)
 :::
 :::{.column width = "25%" .text-center .border-top1}
 `r fa("circle-check", fill = "#79B530", height = "80px", prefer_type = "solid")`  
@@ -963,7 +965,7 @@ engine: knitr
 
 :::: {.columns}
 :::{.column width = "20%" .text-center .border-top1}
-![](www/holepunch_logo.png){width="60%"}
+[![](www/holepunch_logo.png){width="60%"}](https://karthik.github.io/holepunch/)  
 :::
 :::{.column width = "25%" .text-center .border-top1}
 :::
@@ -1050,7 +1052,7 @@ renv::restore()  # to restore your setup of packages
 - Metadata remain publicly accessible
 - Access path transparently documented
 
-**Principle:** "As open as possible, as closed as necessary" [@europeancommission.2020]
+**Principle:** "As open as possible, as closed as necessary" [@europeancommission.2018a]
 :::
 ::::
 
@@ -1132,7 +1134,7 @@ We could have the greatest reproducible data and code, but if others can't find 
 :::
 :::{.column width = "33%"}
 *Why not store it with the journal?*  
-`r fa("arrow-right", height = "15px", prefer_type = "solid")` you retain control
+`r fa("arrow-right", height = "15px", prefer_type = "solid")` you retain control  
 `r fa("arrow-right", height = "15px", prefer_type = "solid")` multiple projects reliably in one place
 :::
 ::::
