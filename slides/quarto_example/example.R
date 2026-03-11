@@ -14,49 +14,6 @@ summary(fit)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # forgot to recode negatively coded item
 # (you should never recode into the same variable though...)
 mydata$item2 <- 7 - mydata$item2
